@@ -642,7 +642,7 @@ main {
     position: relative;
     width: 30px;
     height: 30px;
-    border: 1px solid #fff;
+    border: 1px solid rgb(255, 255, 255);
     cursor: pointer;
     overflow: hidden;
     margin-block-end: 17px;
@@ -652,7 +652,7 @@ main {
 
 .slider-controls-arrow:hover {
     border: 1px solid transparent;
-    background-color: #18cfab;
+    background-color: rgb(24, 207, 171);
     opacity: 1;
 }
 
@@ -660,8 +660,8 @@ main {
     content: '';
     width: 8px;
     height: 8px;
-    border-block-end: 2px solid #fff;
-    border-inline-start: 2px solid#fff;
+    border-block-end: 2px solid rgb(255, 255, 255);
+    border-inline-start: 2px solid rgb(255, 255, 255);
     transform: translateY(-50%) rotate(45deg);
     position: absolute;
     top: 50%;
@@ -672,8 +672,8 @@ main {
     content: '';
     width: 8px;
     height: 8px;
-    border-block-end: 2px solid #fff;
-    border-inline-start: 2px solid#fff;
+    border-block-end: 2px solid rgb(255, 255, 255);
+    border-inline-start: 2px solid rgb(255, 255, 255);
     transform: translateY(-50%) rotate(-135deg);
     position: absolute;
     top: 50%;
