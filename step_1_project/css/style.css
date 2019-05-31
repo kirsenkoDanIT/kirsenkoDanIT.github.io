@@ -144,10 +144,6 @@ nav {
     color: rgb(24, 207, 171);
 }
 
-.main-menu a:hover .brd {
-    border-block-end: 2px solid green;
-}
-
 .page-header-bottom .container {
     text-align: center;
     color: rgb(255, 255, 255);
@@ -629,7 +625,6 @@ main {
     cursor: pointer;
     margin: 0 20px;
 }
-
 
 .slider-controls-img img {
     object-fit: cover;
