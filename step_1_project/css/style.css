@@ -434,15 +434,18 @@ main {
 .our-work-gallery {
     margin-block-end: 70px;
     width: 100%;
-}
-
-.our-work-gallery div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
+/* .our-work-gallery div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+} */
+
 .our-work-gallery img {
     width: 100%;
+    display: block;
 }
 
 .load-more {
