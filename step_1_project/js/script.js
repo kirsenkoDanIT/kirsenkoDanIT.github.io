@@ -20,20 +20,4 @@ $(document).ready(function () {
     const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item');
     const ourWork = new Tabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item');
 
-    // $(document).on('click', '.our-services-header-tabs-btn', (event) => {
-
-    //     $(event.target).addClass('services-tabs-btn-active');
-    //     $(event.target).siblings().removeClass('services-tabs-btn-active');
-
-    //     $('.our-services-articles-item').each(function () {
-    //         console.log($(this).data('name'))
-    //         if ($(event.target).text() === $(this).data('name')) {
-    //             $(this).show('slow');
-    //         } else $(this).hide('slow');
-    //     })
-
-    // });
-
-
-
 })
