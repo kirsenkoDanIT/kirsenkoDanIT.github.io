@@ -15,7 +15,7 @@ $(document).ready(function () {
             $(itemClass).each(function () {
                 console.log($(this).data('name'))
                 $(this).css("order", `${Math.floor(Math.random()*50)}`);
-                if ($(event.target).text() === $(this).data('name')) {
+                if ($(event.target).text() === $(this).data('name') || $(event.target).text() === 'All') {
                     $(this).show();
                 } else $(this).hide();
             })
