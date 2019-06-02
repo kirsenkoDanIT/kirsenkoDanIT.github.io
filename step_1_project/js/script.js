@@ -14,14 +14,13 @@ $(document).ready(function () {
             $(itemClass).each(function () {
                 console.log($(this).data('name'))
                 $(this).css("order", `${Math.floor(Math.random()*50)}`);
-                if ($(event.currentTarget).data('name') === $(this).data('name') || $(event.currentTarget).text() === 'All') {
+                if ($(event.currentTarget).data('name') === $(this).data('name') || !$(event.currentTarget).data('name')) {
                     $(this).show();
                 } else $(this).hide();
             })
 
         });
     }
-    console.log($('.our-work-gallery-item'));
 
 
     const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item');
