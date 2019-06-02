@@ -49,13 +49,12 @@ $(document).ready(function () {
             currentSlide = $(`.${tabClassActive}`).index(tabClass);
             $(tabClass).eq(currentSlide).removeClass(tabClassActive);
 
-            if (event.target === $('.slider-controls-right')) {
+            if ($(event.target).hasClass('slider-controls-right')) {
                 currentSlide = (currentSlide + 1) % $(tabClass).length;
-            } else if (event.target === $('.slider-controls-left')) {
+            } else if ($(event.target).hasClass('slider-controls-left')) {
                 currentSlide = (currentSlide - 1) % $(tabClass).length;
             };
 
-            currentSlide = (currentSlide + 1) % $(tabClass).length;
             $(tabClass).eq(currentSlide).addClass(tabClassActive);
             $(itemClass).each(function () {
                 ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
