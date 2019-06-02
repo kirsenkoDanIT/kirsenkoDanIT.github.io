@@ -21,7 +21,7 @@ $(document).ready(function () {
     const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item');
     const ourWork = new Tabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item');
 
-    const sliderNew = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide')
+    const sliderAboutTheHam = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide')
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide');
 
     function Slider(tabClass, tabClassActive, itemClass) {
