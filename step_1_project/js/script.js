@@ -7,17 +7,16 @@ $(document).ready(function () {
     const aboutTheHamSlider = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
 
-
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName)
         $(itemClass).each(function () {
             ($(this).data(dataName) === defaultTab || !defaultTab) ? $(this).show(): $(this).hide();
-            $(this).css("order", `${Math.floor(Math.random()*50)}`);
+            $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
         });
         $(document).on('click', tabClass, (event) => {
             $(event.currentTarget).addClass(tabClassActive).siblings().removeClass(tabClassActive);
             $(itemClass).each(function () {
-                $(this).css("order", `${Math.floor(Math.random()*50)}`);
+                $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
                 ($(event.currentTarget).data(dataName) === $(this).data(dataName) || !$(event.currentTarget).data(dataName)) ? $(this).show(): $(this).hide();
             });
         });
@@ -62,4 +61,5 @@ $(document).ready(function () {
         });
 
     };
+
 });
