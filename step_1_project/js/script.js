@@ -1,6 +1,12 @@
 'use strict'
 
 $(document).ready(function () {
+    const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item');
+    const ourWork = new Tabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item');
+
+    const sliderAboutTheHam = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide')
+    const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide');
+
 
     function Tabs(tabClass, tabClassActive, itemClass) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data('name')
@@ -18,14 +24,8 @@ $(document).ready(function () {
             })
         });
     }
-    const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item');
-    const ourWork = new Tabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item');
-
-    const sliderAboutTheHam = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide')
-    const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide');
 
     function Slider(tabClass, tabClassActive, itemClass) {
-
         let currentSlide = 0;
         $(tabClass).eq(currentSlide).addClass(tabClassActive);
         $(document).on('click', '.slider-controls-right', function () {
