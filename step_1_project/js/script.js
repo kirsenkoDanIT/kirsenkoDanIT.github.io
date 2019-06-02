@@ -59,7 +59,6 @@ $(document).ready(function () {
                 ($(item).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(item).show(): $(item).hide();
             });
         });
-
     };
 
 });
