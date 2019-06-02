@@ -24,31 +24,26 @@ $(document).ready(function () {
     const sliderNew = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide')
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide');
 
-    function Slider(imgContainerClass, tabClassActive, itemClass) {
+    function Slider(tabClass, tabClassActive, itemClass) {
 
-        let currentSlide = 0; // = $(`.${tabClassActive}`).index(imgContainerClass);
-        $(imgContainerClass).eq(currentSlide).addClass(tabClassActive);
-
-        // console.log($(`.${tabClassActive}`).index(imgContainerClass));
-
+        let currentSlide = 0;
+        $(tabClass).eq(currentSlide).addClass(tabClassActive);
         $(document).on('click', '.slider-controls-right', function () {
-            currentSlide = $(`.${tabClassActive}`).index(imgContainerClass);
-            $(imgContainerClass).eq(currentSlide).removeClass(tabClassActive);
-            currentSlide = (currentSlide + 1) % $(imgContainerClass).length;
-            $(imgContainerClass).eq(currentSlide).addClass(tabClassActive);
+            currentSlide = $(`.${tabClassActive}`).index(tabClass);
+            $(tabClass).eq(currentSlide).removeClass(tabClassActive);
+            currentSlide = (currentSlide + 1) % $(tabClass).length;
+            $(tabClass).eq(currentSlide).addClass(tabClassActive);
             $(itemClass).each(function () {
-                ($(this).data('name') === $(imgContainerClass).eq(currentSlide).data('name')) ? $(this).show(): $(this).hide();
+                ($(this).data('name') === $(tabClass).eq(currentSlide).data('name')) ? $(this).show(): $(this).hide();
             })
-
         })
-
         $(document).on('click', '.slider-controls-left', function () {
-            currentSlide = $(`.${tabClassActive}`).index(imgContainerClass);
-            $(imgContainerClass).eq(currentSlide).removeClass(tabClassActive);
-            currentSlide = (currentSlide - 1) % $(imgContainerClass).length;
-            $(imgContainerClass).eq(currentSlide).addClass(tabClassActive);
+            currentSlide = $(`.${tabClassActive}`).index(tabClass);
+            $(tabClass).eq(currentSlide).removeClass(tabClassActive);
+            currentSlide = (currentSlide - 1) % $(tabClass).length;
+            $(tabClass).eq(currentSlide).addClass(tabClassActive);
             $(itemClass).each(function () {
-                ($(this).data('name') === $(imgContainerClass).eq(currentSlide).data('name')) ? $(this).show(): $(this).hide();
+                ($(this).data('name') === $(tabClass).eq(currentSlide).data('name')) ? $(this).show(): $(this).hide();
             })
         })
     }
