@@ -45,7 +45,7 @@ $(document).ready(function () {
         //     })
         // });
 
-        $(document).on('click', (event) => {
+        $(document).click((event) => {
             currentSlide = $(`.${tabClassActive}`).index(tabClass);
             $(tabClass).eq(currentSlide).removeClass(tabClassActive);
 
