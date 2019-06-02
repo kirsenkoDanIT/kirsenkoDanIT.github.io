@@ -15,7 +15,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body id="#home">
     <div class="wrap">
         <header class="page-header">
             <section class="page-header-top">
@@ -26,14 +26,14 @@
                     </a>
                     <nav>
                         <ul class="main-menu">
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">about</a></li>
-                            <li><a href="#">skills</a></li>
-                            <li><a href="#">service</a></li>
-                            <li><a href="#">work</a></li>
-                            <li><a href="#">testimonial</a></li>
-                            <li><a href="#">blog</a></li>
-                            <li><a href="#">team</a></li>
+                            <li><a href="#home">home</a></li>
+                            <li><a href="#about">about</a></li>
+                            <li><a href="#skills">skills</a></li>
+                            <li><a href="#service">service</a></li>
+                            <li><a href="#work">work</a></li>
+                            <li><a href="#testimonial">testimonial</a></li>
+                            <li><a href="#blog">blog</a></li>
+                            <li><a href="#team">team</a></li>
                             <li><a href="#">contact</a></li>
                         </ul>
                     </nav>
@@ -55,7 +55,7 @@
             </section>
         </header>
         <main>
-            <section class="about-us">
+            <section class="about-us" id="skills">
                 <artticle class="about-us-item"><img src="img/Sections_background/icon_1.png" alt="icon">
                     <h3>Different theme option</h3>
                 </artticle>
@@ -69,18 +69,19 @@
                     <h3>responsive all device</h3>
                 </artticle>
             </section>
-            <section class="our-services">
+            <section class="our-services" id="service">
                 <div class="container section-container">
                     <h2 class="lines section-title">
                         Our Services
                     </h2>
                     <ul class="our-services-header-tabs">
-                        <li class="our-services-header-tabs-btn services-tabs-btn-active">Web Design</li>
-                        <li class="our-services-header-tabs-btn">Graphic Design</li>
-                        <li class="our-services-header-tabs-btn">Online Support</li>
-                        <li class="our-services-header-tabs-btn">App Design</li>
-                        <li class="our-services-header-tabs-btn">Online Marketing</li>
-                        <li class="our-services-header-tabs-btn">Seo Service</li>
+                        <li class="our-services-header-tabs-btn services-tabs-btn-active" data-name='Web Design'>Web
+                            Design</li>
+                        <li class="our-services-header-tabs-btn" data-name='Graphic Design'>Graphic Design</li>
+                        <li class="our-services-header-tabs-btn" data-name='Online Support'>Online Support</li>
+                        <li class="our-services-header-tabs-btn" data-name='App Design'>App Design</li>
+                        <li class="our-services-header-tabs-btn" data-name='Online Marketing'>Online Marketing</li>
+                        <li class="our-services-header-tabs-btn" data-name='Seo Service'>Seo Service</li>
                     </ul>
 
                     <div class="our-services-articles">
@@ -178,7 +179,7 @@
                     </div>
                 </div>
             </section>
-            <section class="install-now">
+            <section class="install-now" id="testimonial">
                 <div class="container">
                     <h2>Everything is ready. just buy and install now</h2>
                     <p>Smooth reliable, responsive ready, perfect portfolio, unique blog layout and many many options
@@ -186,17 +187,17 @@
                     <a href="#" class="explore">purchase now</a>
                 </div>
             </section>
-            <section class="our-work">
+            <section class="our-work" id="work">
                 <div class="container section-container">
                     <h2 class="lines section-title">
                         Our Amazing Work
                     </h2>
                     <ul class="our-work-header-tabs">
                         <li class="our-work-header-tabs-btn work-tabs-btn-active">All</li>
-                        <li class="our-work-header-tabs-btn">Graphic Design</li>
-                        <li class="our-work-header-tabs-btn">Web Design</li>
-                        <li class="our-work-header-tabs-btn">Landing Pages</li>
-                        <li class="our-work-header-tabs-btn">Wordpress</li>
+                        <li class="our-work-header-tabs-btn" data-name="Graphic Design">Graphic Design</li>
+                        <li class="our-work-header-tabs-btn" data-name="Web Design">Web Design</li>
+                        <li class="our-work-header-tabs-btn" data-name="Landing Pages">Landing Pages</li>
+                        <li class="our-work-header-tabs-btn" data-name="Wordpress">Wordpress</li>
                     </ul>
                     <ul class="our-work-gallery">
                         <li class="our-work-gallery-item" data-name="Graphic Design"><img
@@ -283,7 +284,7 @@
                     <button type="button" class="load-more">Load More</button>
                 </div>
             </section>
-            <section class="breaking-news">
+            <section class="breaking-news" id="blog">
                 <div class="container section-container">
                     <h2 class="lines section-title">Breaking News</h2>
                     <div class="breaking-news-articles">
@@ -386,14 +387,14 @@
                     </div>
                 </div>
             </section>
-            <section class="about-theHam">
+            <section class="about-theHam" id="team">
                 <div class="container section-container">
                     <h2 class="lines">
                         What People Say About theHam
                     </h2>
                     <img src="img/Sections_background/about_theHam.png" alt="about-theHam">
                     <div class="slider">
-                        <div class="slide">
+                        <div class="slide" data-name='Hasan Ali'>
                             <p class="slider-descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
                                 doloribus eligendi deleniti ipsa perferendis aut animi odio maiores deserunt praesentium
                                 reprehenderit saepe sapiente ducimus fugit, quia officia minus. Similique, voluptatibus
@@ -405,19 +406,61 @@
                                 <img src="img/slider/slide1.png" alt="slider-img">
                             </div>
                         </div>
+                        <div class="slide" data-name='Basan Ali'>
+                            <p class="slider-descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+                                doloribus eligendi deleniti ipsa perferendis aut animi odio maiores deserunt
+                                praesentium
+                                reprehenderit saepe sapiente ducimus fugit, quia officia minus. Similique, voluptatibus
+                                sit.
+                            </p>
+                            <h3 class="slider-title">Basan Ali</h3>
+                            <span class="slider-title-descr">Front-end developer</span>
+                            <div class="slider-img">
+                                <img src="img/slider/slide2.png" alt="slider-img">
+                            </div>
+                        </div>
+                        <div class="slide" data-name='Vasan Ali'>
+                            <p class="slider-descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+                                doloribus eligendi deleniti ipsa perferendis aut animi odio maiores deserunt
+                                praesentium
+                                reprehenderit saepe sapiente ducimus fugit, quia officia minus. Similique,
+                                voluptatibus
+                                sit.
+                            </p>
+                            <h3 class="slider-title">Vasan Ali</h3>
+                            <span class="slider-title-descr">Back-end developer</span>
+                            <div class="slider-img">
+                                <img src="img/slider/slide3.png" alt="slider-img">
+                            </div>
+                        </div>
+                        <div class="slide" data-name='Lasan Ali'>
+                            <p class="slider-descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
+                                doloribus eligendi deleniti ipsa perferendis aut animi odio maiores deserunt
+                                praesentium
+                                reprehenderit saepe sapiente ducimus fugit, quia officia minus. Similique,
+                                voluptatibus
+                                sit.
+                            </p>
+                            <h3 class="slider-title">Lasan Ali</h3>
+                            <span class="slider-title-descr">QA Engineer</span>
+                            <div class="slider-img">
+                                <img src="img/slider/slide4.png" alt="slider-img">
+                            </div>
+                        </div>
+
                         <ul class="slider-controls">
                             <li class="slider-controls-left slider-controls-arrow"></li>
-                            <li class="slider-controls-img">
+                            <li class="slider-controls-img" data-name='Hasan Ali'>
                                 <img src="img/slider/slide1.png" alt="slider-img">
                             </li>
-                            <li class="slider-controls-img">
-                                <img src="img/slider/slide1.png" alt="slider-img">
+                            <li class="slider-controls-img" data-name='Basan Ali'>
+                                <img src="img/slider/slide2.png" alt="slider-img">
                             </li>
-                            <li class="slider-controls-img slider-controls-img-active">
-                                <img src="img/slider/slide1.png" alt="slider-img">
+                            <li class="slider-controls-img slider-controls-img-active" data-name='Vasan Ali'>
+                                <img src="img/slider/slide3.png" alt="slider-img">
                             </li>
-                            <li class="slider-controls-img">
-                                <img src="img/slider/slide1.png" alt="slider-img">
+                            <li class="slider-controls-img" data-name='Lasan Ali'>
+                                <img src="img/slider/slide4.png" alt="slider-img">
                             </li>
                             <li class="slider-controls-right slider-controls-arrow"></li>
                         </ul>
