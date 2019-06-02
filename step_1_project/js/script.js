@@ -56,8 +56,8 @@ $(document).ready(function () {
             };
 
             $(tabClass).eq(currentSlide).addClass(tabClassActive);
-            $(itemClass).each(function () {
-                ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
+            $(itemClass).each((i, item) => {
+                ($(item).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(item).show(): $(item).hide();
             });
         });
 
