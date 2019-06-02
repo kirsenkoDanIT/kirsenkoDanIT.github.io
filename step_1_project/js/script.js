@@ -4,7 +4,7 @@ $(document).ready(function () {
     const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item', 'name');
     const ourWork = new Tabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item', 'name');
 
-    const sliderAboutTheHam = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
+    const aboutTheHamSlider = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
 
 
