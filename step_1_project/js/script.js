@@ -4,12 +4,9 @@ $(document).ready(function () {
 
     const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item', 'name');
     const ourWork = new GalleryTabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item', 'name', '.load-more');
-
+    const loadMore = new LoadMore('.our-work-gallery-item', '.load-more');
     const aboutTheHamSlider = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
-
-    const loadMore = new LoadMore('.our-work-gallery-item', '.load-more');
-
 
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
@@ -38,7 +35,7 @@ $(document).ready(function () {
 
         if (!defaultTab) {
             sliceCount(12);
-        }
+        };
 
         $(document).on('click', tabClass, (event) => {
             $(event.currentTarget).addClass(tabClassActive).siblings().removeClass(tabClassActive);
@@ -61,7 +58,7 @@ $(document).ready(function () {
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`).slice(0, 12).show();
                 $(`${itemClass}:hidden`).length ? $(this).show() : $(this).hide();
-                clearTimeout(timeout)
+                clearTimeout(timeout);
             }, 500);
         });
     };
