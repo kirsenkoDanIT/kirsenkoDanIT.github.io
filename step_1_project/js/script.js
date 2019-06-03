@@ -23,7 +23,7 @@ $(document).ready(function () {
     };
 
     function Slider(tabClass, tabClassActive, itemClass, dataName) {
-        let currentSlide = 0;
+        let currentSlide = Math.floor(Math.random() * $(tabClass).length);
         $(tabClass).eq(currentSlide).addClass(tabClassActive);
         // $(document).on('click', '.slider-controls-right', function () {
         //     currentSlide = $(`.${tabClassActive}`).index(tabClass);
