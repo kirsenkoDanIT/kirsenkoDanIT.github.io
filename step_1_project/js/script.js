@@ -21,10 +21,10 @@ $(document).ready(function () {
             ($(this).data(dataName) === defaultTab || !defaultTab) ? $(this).show(): $(this).hide();
             $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
         });
-        // if (!($(`${tabClass}.${tabClassActive}`).data(dataName))) {
-        //     console.log(5)
-        //     $('.load-more').show();
-        // }
+        if ($(`${tabClass}.${tabClassActive}`).data(dataName)) {
+            console.log(5)
+            $('.load-more').hide();
+        }
         if (!defaultTab) {
             sliceCount(12);
         }
@@ -42,6 +42,7 @@ $(document).ready(function () {
                 $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
                 ($(event.currentTarget).data(dataName) === $(this).data(dataName) || !$(event.currentTarget).data(dataName)) ? $(this).show(): $(this).hide();
             });
+
             if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
                 sliceCount(12);
                 $('.load-more').show()
