@@ -8,7 +8,7 @@ $(document).ready(function () {
     const aboutTheHamSlider = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
 
-    // const loadMore = new LoadMore('.our-work-gallery-item', 'name', 'work-tabs-btn-active', '.our-work-header-tabs-btn');
+    const loadMore = new LoadMore('.our-work-gallery-item', 'name', 'work-tabs-btn-active', '.our-work-header-tabs-btn');
 
 
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
@@ -21,10 +21,7 @@ $(document).ready(function () {
             ($(this).data(dataName) === defaultTab || !defaultTab) ? $(this).show(): $(this).hide();
             $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
         });
-        // if ($(`${tabClass}.${tabClassActive}`).data(dataName)) {
-        //     console.log(5)
-        //     $('.load-more').hide();
-        // }
+
         if (!defaultTab) {
             sliceCount(12);
         }
@@ -35,28 +32,33 @@ $(document).ready(function () {
                 $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
                 ($(event.currentTarget).data(dataName) === $(this).data(dataName) || !$(event.currentTarget).data(dataName)) ? $(this).show(): $(this).hide();
             });
+            if ($(`${tabClass}.${tabClassActive}`).data(dataName)) {
+                $('.load-more').hide();
+            };
 
             if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
                 sliceCount(12);
-                $('.load-more').show()
-            }
-
+                $('.load-more').show();
+            };
         });
+    };
+
+    function LoadMore(itemClass, dataName, tabClassActive, tabClass) {
+
         $(document).on('click', '.load-more', function () {
             console.log(1)
             // $('.load-more').hide()
             const timeout = setTimeout(() => {
                 if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
-                    $(`${itemClass}:hidden`).slice(0, 12).slideDown();
+                    $(`${itemClass}:hidden`).slice(0, 12).show();
                 }
                 if (!$(`${itemClass}:hidden`).length) {
                     $('.load-more').hide()
                 } // else $('.load-more').show()
                 clearTimeout(timeout)
-            }, 1000)
-
-
+            }, 500);
         });
+
     };
 
     function Slider(tabClass, tabClassActive, itemClass, dataName) {
@@ -97,9 +99,5 @@ $(document).ready(function () {
             });
         });
     };
-
-    function LoadMore(itemClass, dataName, tabClassActive, tabClass) {
-
-    }
 
 });
