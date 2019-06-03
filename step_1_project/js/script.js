@@ -99,49 +99,7 @@ $(document).ready(function () {
     };
 
     function LoadMore(itemClass, dataName, tabClassActive, tabClass) {
-        const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
-        // $(itemClass).hide();
 
-        // if (!defaultTab) {
-        //     $(itemClass).slice(0, 12).show();
-        // } else {
-        //     $(itemClass).each(function () {
-        //         ($(this).data(dataName) === defaultTab) ? $(this).show(): $(this).hide();
-        //     });
-        // }
-
-        // if (!defaultTab) {
-        //     $(document).click('.load-more', function () {
-        //         $(`${itemClass}:hidden`).slice(0, 12).show();
-        //         // console.dir($(`${itemClass}:hidden`));
-        //         // $(this).data(dataName)
-        //         // if (!dataName) {
-        //         //     $(itemClass).slice(0, 12).show();
-        //         // }
-        //         // $(`${itemClass}:hidden`).each(function () {
-        //         //     ($(this).data(dataName) === defaultTab) ? $(this).slice(0, 12).show(): $(this).hide();
-        //         // });
-        //     })
-
-        // }
-
-        // $(itemClass).slice(0, 12).show();
-        // const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName)
-        // $(document).click('.load-more', function () {
-        //     $(`${itemClass}:hidden`).slice(0, 12).show();
-        //     // console.dir($(`${itemClass}:hidden`));
-        //     // $(this).data(dataName)
-        //     // if (!dataName) {
-        //     //     $(itemClass).slice(0, 12).show();
-        //     // }
-        //     // $(`${itemClass}:hidden`).each(function () {
-        //     //     ($(this).data(dataName) === defaultTab) ? $(this).slice(0, 12).show(): $(this).hide();
-        //     // });
-        // })
-
-        // console.dir($(itemClass));
-        // console.dir($(itemClass).slice(0, 12));
-        // console.dir($(`${itemClass}:hidden`));
     }
 
 });
