@@ -21,21 +21,14 @@ $(document).ready(function () {
             ($(this).data(dataName) === defaultTab || !defaultTab) ? $(this).show(): $(this).hide();
             $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
         });
-        if ($(`${tabClass}.${tabClassActive}`).data(dataName)) {
-            console.log(5)
-            $('.load-more').hide();
-        }
+        // if ($(`${tabClass}.${tabClassActive}`).data(dataName)) {
+        //     console.log(5)
+        //     $('.load-more').hide();
+        // }
         if (!defaultTab) {
             sliceCount(12);
         }
-        $(document).on('click', '.load-more', function () {
-            if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
-                $(`${itemClass}:hidden`).slice(0, 12).show();
-                if (!$(`${itemClass}:hidden`).length) {
-                    $('.load-more').hide()
-                }
-            }
-        });
+
         $(document).on('click', tabClass, (event) => {
             $(event.currentTarget).addClass(tabClassActive).siblings().removeClass(tabClassActive);
             $(itemClass).each(function () {
@@ -47,6 +40,21 @@ $(document).ready(function () {
                 sliceCount(12);
                 $('.load-more').show()
             }
+
+        });
+        $(document).on('click', '.load-more', function () {
+            console.log(1)
+            // $('.load-more').hide()
+            const timeout = setTimeout(() => {
+                if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
+                    $(`${itemClass}:hidden`).slice(0, 12).slideDown();
+                }
+                if (!$(`${itemClass}:hidden`).length) {
+                    $('.load-more').hide()
+                } // else $('.load-more').show()
+                clearTimeout(timeout)
+            }, 1000)
+
 
         });
     };
