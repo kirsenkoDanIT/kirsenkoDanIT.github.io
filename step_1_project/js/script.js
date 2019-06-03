@@ -44,21 +44,16 @@ $(document).ready(function () {
     };
 
     function LoadMore(itemClass, dataName, tabClassActive, tabClass) {
-
         $(document).on('click', '.load-more', function () {
-            console.log(1)
             $('.load-more').hide()
             const timeout = setTimeout(() => {
                 if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
                     $(`${itemClass}:hidden`).slice(0, 12).show();
-                }
-                if (!$(`${itemClass}:hidden`).length) {
-                    $('.load-more').hide()
-                } else $('.load-more').show()
+                };
+                !$(`${itemClass}:hidden`).length ? $('.load-more').hide() : $('.load-more').show()
                 clearTimeout(timeout)
             }, 500);
         });
-
     };
 
     function Slider(tabClass, tabClassActive, itemClass, dataName) {
