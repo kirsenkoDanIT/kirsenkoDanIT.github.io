@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
     const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item', 'name');
-    const ourWork = new Tabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item', 'name');
+    const ourWork = new GalleryTabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item', 'name');
 
     const aboutTheHamSlider = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
@@ -12,6 +12,19 @@ $(document).ready(function () {
 
 
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
+        const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
+        $(itemClass).each(function () {
+            ($(this).data(dataName) === defaultTab) ? $(this).show(): $(this).hide();
+        });
+        $(document).on('click', tabClass, (event) => {
+            $(event.currentTarget).addClass(tabClassActive).siblings().removeClass(tabClassActive);
+            $(itemClass).each(function () {
+                ($(event.currentTarget).data(dataName) === $(this).data(dataName)) ? $(this).show(): $(this).hide();
+            });
+        });
+    };
+
+    function GalleryTabs(tabClass, tabClassActive, itemClass, dataName) {
         const sliceCount = (count) => {
             $(itemClass).hide();
             $(`${itemClass}:hidden`).slice(0, count).show();
@@ -21,6 +34,7 @@ $(document).ready(function () {
             ($(this).data(dataName) === defaultTab || !defaultTab) ? $(this).show(): $(this).hide();
             $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
         });
+
 
         if (!defaultTab) {
             sliceCount(12);
@@ -32,24 +46,21 @@ $(document).ready(function () {
                 $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
                 ($(event.currentTarget).data(dataName) === $(this).data(dataName) || !$(event.currentTarget).data(dataName)) ? $(this).show(): $(this).hide();
             });
-            if ($(`${tabClass}.${tabClassActive}`).data(dataName)) {
-                $('.load-more').hide();
-            };
 
-            if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
+            (!$(event.currentTarget).data(dataName)) ? $('.load-more').show(): $('.load-more').hide();
+
+            if (!$(event.currentTarget).data(dataName)) {
                 sliceCount(12);
-                $('.load-more').show();
             };
         });
     };
 
-    function LoadMore(itemClass, dataName, tabClassActive, tabClass) {
+    function LoadMore(itemClass) {
         $(document).on('click', '.load-more', function () {
             $('.load-more').hide()
             const timeout = setTimeout(() => {
-                if (!$(`${tabClass}.${tabClassActive}`).data(dataName)) {
-                    $(`${itemClass}:hidden`).slice(0, 12).show();
-                };
+                $(`${itemClass}:hidden`).slice(0, 12).show();
+                // };
                 !$(`${itemClass}:hidden`).length ? $('.load-more').hide() : $('.load-more').show()
                 clearTimeout(timeout)
             }, 500);
