@@ -3,12 +3,12 @@
 $(document).ready(function () {
 
     const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item', 'name');
-    const ourWork = new GalleryTabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item', 'name');
+    const ourWork = new GalleryTabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item', 'name', '.load-more');
 
     const aboutTheHamSlider = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
     const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
 
-    const loadMore = new LoadMore('.our-work-gallery-item', 'name', 'work-tabs-btn-active', '.our-work-header-tabs-btn');
+    const loadMore = new LoadMore('.our-work-gallery-item', '.load-more');
 
 
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
@@ -24,7 +24,7 @@ $(document).ready(function () {
         });
     };
 
-    function GalleryTabs(tabClass, tabClassActive, itemClass, dataName) {
+    function GalleryTabs(tabClass, tabClassActive, itemClass, dataName, loadMoreBtnClass) {
         const sliceCount = (count) => {
             $(itemClass).hide();
             $(`${itemClass}:hidden`).slice(0, count).show();
@@ -47,7 +47,7 @@ $(document).ready(function () {
                 ($(event.currentTarget).data(dataName) === $(this).data(dataName) || !$(event.currentTarget).data(dataName)) ? $(this).show(): $(this).hide();
             });
 
-            (!$(event.currentTarget).data(dataName)) ? $('.load-more').show(): $('.load-more').hide();
+            (!$(event.currentTarget).data(dataName)) ? $(loadMoreBtnClass).show(): $(loadMoreBtnClass).hide();
 
             if (!$(event.currentTarget).data(dataName)) {
                 sliceCount(12);
@@ -55,13 +55,12 @@ $(document).ready(function () {
         });
     };
 
-    function LoadMore(itemClass) {
-        $(document).on('click', '.load-more', function () {
-            $('.load-more').hide()
+    function LoadMore(itemClass, loadMoreBtnClass) {
+        $(document).on('click', loadMoreBtnClass, function () {
+            $(this).hide();
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`).slice(0, 12).show();
-                // };
-                !$(`${itemClass}:hidden`).length ? $('.load-more').hide() : $('.load-more').show()
+                $(`${itemClass}:hidden`).length ? $(this).show() : $(this).hide();
                 clearTimeout(timeout)
             }, 500);
         });
