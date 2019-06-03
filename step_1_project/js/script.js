@@ -44,11 +44,13 @@ $(document).ready(function () {
                 ($(event.currentTarget).data(dataName) === $(this).data(dataName) || !$(event.currentTarget).data(dataName)) ? $(this).show(): $(this).hide();
             });
 
-            (!$(event.currentTarget).data(dataName)) ? $(loadMoreBtnClass).show(): $(loadMoreBtnClass).hide();
-
             if (!$(event.currentTarget).data(dataName)) {
                 sliceCount(12);
             };
+
+            ($(event.currentTarget).data(dataName)) ? $(loadMoreBtnClass).hide(): $(loadMoreBtnClass).show();
+
+
         });
     };
 
