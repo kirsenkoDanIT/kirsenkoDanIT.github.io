@@ -88,13 +88,11 @@ $(document).ready(function () {
         $(document).click((event) => {
             currentSlide = $(`.${tabClassActive}`).index(tabClass);
             $(tabClass).eq(currentSlide).removeClass(tabClassActive);
-
             if ($(event.target).hasClass('slider-controls-right')) {
                 currentSlide = (currentSlide + 1) % $(tabClass).length;
             } else if ($(event.target).hasClass('slider-controls-left')) {
                 currentSlide = (currentSlide - 1) % $(tabClass).length;
             };
-
             $(tabClass).eq(currentSlide).addClass(tabClassActive);
             $(itemClass).each((i, item) => {
                 ($(item).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(item).show(): $(item).hide();
