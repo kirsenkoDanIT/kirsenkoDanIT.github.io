@@ -1,105 +1,163 @@
-'use strict'
+"use strict";
 
-$(document).ready(function () {
+$(document).ready(function() {
+  const ourServices = new Tabs(
+    ".our-services-header-tabs-btn",
+    "services-tabs-btn-active",
+    ".our-services-articles-item",
+    "name"
+  );
+  const ourWork = new GalleryTabs(
+    ".our-work-header-tabs-btn",
+    "work-tabs-btn-active",
+    ".our-work-gallery-item",
+    "name",
+    ".load-more"
+  );
+  const loadMore = new LoadMore(".our-work-gallery-item", ".load-more");
+  const aboutTheHamSlider = new Slider(
+    ".slider-controls-img",
+    "slider-controls-img-active",
+    ".slide",
+    "name"
+  );
+  const aboutTheHam = new Tabs(
+    ".slider-controls-img",
+    "slider-controls-img-active",
+    ".slide",
+    "name"
+  );
 
-    const ourServices = new Tabs('.our-services-header-tabs-btn', 'services-tabs-btn-active', '.our-services-articles-item', 'name');
-    const ourWork = new GalleryTabs('.our-work-header-tabs-btn', 'work-tabs-btn-active', '.our-work-gallery-item', 'name', '.load-more');
-    const loadMore = new LoadMore('.our-work-gallery-item', '.load-more');
-    const aboutTheHamSlider = new Slider('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
-    const aboutTheHam = new Tabs('.slider-controls-img', 'slider-controls-img-active', '.slide', 'name');
+  function Tabs(tabClass, tabClassActive, itemClass, dataName) {
+    const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
+    $(itemClass).each(function() {
+      $(this).data(dataName) === defaultTab ? $(this).show() : $(this).hide();
+    });
+    $(document).on("click", tabClass, event => {
+      $(event.currentTarget)
+        .addClass(tabClassActive)
+        .siblings()
+        .removeClass(tabClassActive);
+      $(itemClass).each(function() {
+        $(event.currentTarget).data(dataName) === $(this).data(dataName)
+          ? $(this).show()
+          : $(this).hide();
+      });
+    });
+  }
 
-    function Tabs(tabClass, tabClassActive, itemClass, dataName) {
-        const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
-        $(itemClass).each(function () {
-            ($(this).data(dataName) === defaultTab) ? $(this).show(): $(this).hide();
-        });
-        $(document).on('click', tabClass, (event) => {
-            $(event.currentTarget).addClass(tabClassActive).siblings().removeClass(tabClassActive);
-            $(itemClass).each(function () {
-                ($(event.currentTarget).data(dataName) === $(this).data(dataName)) ? $(this).show(): $(this).hide();
-            });
-        });
+  function GalleryTabs(
+    tabClass,
+    tabClassActive,
+    itemClass,
+    dataName,
+    loadMoreBtnClass
+  ) {
+    const sliceCount = count => {
+      $(itemClass).hide();
+      $(`${itemClass}:hidden`)
+        .slice(0, count)
+        .show();
     };
+    const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
+    $(itemClass).each(function() {
+      $(this).data(dataName) === defaultTab || !defaultTab
+        ? $(this).show()
+        : $(this).hide();
+      $(this).css(
+        "order",
+        `${Math.floor(Math.random() * $(itemClass).length)}`
+      );
+    });
 
-    function GalleryTabs(tabClass, tabClassActive, itemClass, dataName, loadMoreBtnClass) {
-        const sliceCount = (count) => {
-            $(itemClass).hide();
-            $(`${itemClass}:hidden`).slice(0, count).show();
-        };
-        const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
-        $(itemClass).each(function () {
-            ($(this).data(dataName) === defaultTab || !defaultTab) ? $(this).show(): $(this).hide();
-            $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
-        });
+    if (!defaultTab) {
+      sliceCount(12);
+    }
 
+    $(document).on("click", tabClass, event => {
+      $(event.currentTarget)
+        .addClass(tabClassActive)
+        .siblings()
+        .removeClass(tabClassActive);
+      $(itemClass).each(function() {
+        $(this).css(
+          "order",
+          `${Math.floor(Math.random() * $(itemClass).length)}`
+        );
+        $(event.currentTarget).data(dataName) === $(this).data(dataName) ||
+        !$(event.currentTarget).data(dataName)
+          ? $(this).show()
+          : $(this).hide();
+      });
 
-        if (!defaultTab) {
-            sliceCount(12);
-        };
+      if (!$(event.currentTarget).data(dataName)) {
+        sliceCount(12);
+      }
 
-        $(document).on('click', tabClass, (event) => {
-            $(event.currentTarget).addClass(tabClassActive).siblings().removeClass(tabClassActive);
-            $(itemClass).each(function () {
-                $(this).css("order", `${Math.floor(Math.random()*$(itemClass).length)}`);
-                ($(event.currentTarget).data(dataName) === $(this).data(dataName) || !$(event.currentTarget).data(dataName)) ? $(this).show(): $(this).hide();
-            });
+      $(event.currentTarget).data(dataName)
+        ? $(loadMoreBtnClass).hide()
+        : $(loadMoreBtnClass).show();
+    });
+  }
 
-            if (!$(event.currentTarget).data(dataName)) {
-                sliceCount(12);
-            };
+  function LoadMore(itemClass, loadMoreBtnClass) {
+    $(document).on("click", loadMoreBtnClass, function() {
+      $(this).hide();
+      const timeout = setTimeout(() => {
+        $(`${itemClass}:hidden`)
+          .slice(0, 12)
+          .show();
+        $(`${itemClass}:hidden`).length ? $(this).show() : $(this).hide();
+        clearTimeout(timeout);
+      }, 500);
+    });
+  }
 
-            ($(event.currentTarget).data(dataName)) ? $(loadMoreBtnClass).hide(): $(loadMoreBtnClass).show();
+  function Slider(tabClass, tabClassActive, itemClass, dataName) {
+    let currentSlide = Math.floor(Math.random() * $(tabClass).length);
+    $(tabClass)
+      .eq(currentSlide)
+      .addClass(tabClassActive);
+    // $(document).on('click', '.slider-controls-right', function () {
+    //     currentSlide = $(`.${tabClassActive}`).index(tabClass);
+    //     $(tabClass).eq(currentSlide).removeClass(tabClassActive);
+    //     currentSlide = (currentSlide + 1) % $(tabClass).length;
+    //     $(tabClass).eq(currentSlide).addClass(tabClassActive);
+    //     $(itemClass).each(function () {
+    //         ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
+    //     })
+    // });
+    // $(document).on('click', '.slider-controls-left', function () {
+    //     currentSlide = $(`.${tabClassActive}`).index(tabClass);
+    //     $(tabClass).eq(currentSlide).removeClass(tabClassActive);
+    //     currentSlide = (currentSlide - 1) % $(tabClass).length;
+    //     $(tabClass).eq(currentSlide).addClass(tabClassActive);
+    //     $(itemClass).each(function () {
+    //         ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
+    //     })
+    // });
 
-
-        });
-    };
-
-    function LoadMore(itemClass, loadMoreBtnClass) {
-        $(document).on('click', loadMoreBtnClass, function () {
-            $(this).hide();
-            const timeout = setTimeout(() => {
-                $(`${itemClass}:hidden`).slice(0, 12).show();
-                $(`${itemClass}:hidden`).length ? $(this).show() : $(this).hide();
-                clearTimeout(timeout);
-            }, 500);
-        });
-    };
-
-    function Slider(tabClass, tabClassActive, itemClass, dataName) {
-        let currentSlide = Math.floor(Math.random() * $(tabClass).length);
-        $(tabClass).eq(currentSlide).addClass(tabClassActive);
-        // $(document).on('click', '.slider-controls-right', function () {
-        //     currentSlide = $(`.${tabClassActive}`).index(tabClass);
-        //     $(tabClass).eq(currentSlide).removeClass(tabClassActive);
-        //     currentSlide = (currentSlide + 1) % $(tabClass).length;
-        //     $(tabClass).eq(currentSlide).addClass(tabClassActive);
-        //     $(itemClass).each(function () {
-        //         ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
-        //     })
-        // });
-        // $(document).on('click', '.slider-controls-left', function () {
-        //     currentSlide = $(`.${tabClassActive}`).index(tabClass);
-        //     $(tabClass).eq(currentSlide).removeClass(tabClassActive);
-        //     currentSlide = (currentSlide - 1) % $(tabClass).length;
-        //     $(tabClass).eq(currentSlide).addClass(tabClassActive);
-        //     $(itemClass).each(function () {
-        //         ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
-        //     })
-        // });
-
-        $(document).click((event) => {
-            currentSlide = $(`.${tabClassActive}`).index(tabClass);
-            $(tabClass).eq(currentSlide).removeClass(tabClassActive);
-            if ($(event.target).hasClass('slider-controls-right')) {
-                currentSlide = (currentSlide + 1) % $(tabClass).length;
-            } else if ($(event.target).hasClass('slider-controls-left')) {
-                currentSlide = (currentSlide - 1) % $(tabClass).length;
-            };
-            $(tabClass).eq(currentSlide).addClass(tabClassActive);
-            $(itemClass).each((i, item) => {
-                ($(item).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(item).show(): $(item).hide();
-            });
-        });
-    };
-
+    $(document).click(event => {
+      currentSlide = $(`.${tabClassActive}`).index(tabClass);
+      $(tabClass)
+        .eq(currentSlide)
+        .removeClass(tabClassActive);
+      if ($(event.target).hasClass("slider-controls-right")) {
+        currentSlide = (currentSlide + 1) % $(tabClass).length;
+      } else if ($(event.target).hasClass("slider-controls-left")) {
+        currentSlide = (currentSlide - 1) % $(tabClass).length;
+      }
+      $(tabClass)
+        .eq(currentSlide)
+        .addClass(tabClassActive);
+      $(itemClass).each((i, item) => {
+        $(item).data(dataName) ===
+        $(tabClass)
+          .eq(currentSlide)
+          .data(dataName)
+          ? $(item).show()
+          : $(item).hide();
+      });
+    });
+  }
 });
