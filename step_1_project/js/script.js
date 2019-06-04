@@ -118,35 +118,19 @@ $(document).ready(function() {
     $(tabClass)
       .eq(currentSlide)
       .addClass(tabClassActive);
-    // $(document).on('click', '.slider-controls-right', function () {
-    //     currentSlide = $(`.${tabClassActive}`).index(tabClass);
-    //     $(tabClass).eq(currentSlide).removeClass(tabClassActive);
-    //     currentSlide = (currentSlide + 1) % $(tabClass).length;
-    //     $(tabClass).eq(currentSlide).addClass(tabClassActive);
-    //     $(itemClass).each(function () {
-    //         ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
-    //     })
-    // });
-    // $(document).on('click', '.slider-controls-left', function () {
-    //     currentSlide = $(`.${tabClassActive}`).index(tabClass);
-    //     $(tabClass).eq(currentSlide).removeClass(tabClassActive);
-    //     currentSlide = (currentSlide - 1) % $(tabClass).length;
-    //     $(tabClass).eq(currentSlide).addClass(tabClassActive);
-    //     $(itemClass).each(function () {
-    //         ($(this).data(dataName) === $(tabClass).eq(currentSlide).data(dataName)) ? $(this).show(): $(this).hide();
-    //     })
-    // });
 
     $(document).click(event => {
       currentSlide = $(`.${tabClassActive}`).index(tabClass);
       $(tabClass)
         .eq(currentSlide)
         .removeClass(tabClassActive);
+
       if ($(event.target).hasClass("slider-controls-right")) {
         currentSlide = (currentSlide + 1) % $(tabClass).length;
       } else if ($(event.target).hasClass("slider-controls-left")) {
         currentSlide = (currentSlide - 1) % $(tabClass).length;
       }
+
       $(tabClass)
         .eq(currentSlide)
         .addClass(tabClassActive);
