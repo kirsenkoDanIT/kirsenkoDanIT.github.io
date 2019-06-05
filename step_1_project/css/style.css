@@ -23,8 +23,8 @@ body {
     max-width: 1160px;
     padding: 0 10px;
     width: 100%;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-header {
@@ -59,8 +59,8 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    margin-block-end: 42px;
-    margin-block-start: 42px;
+    margin-bottom: 42px;
+    margin-top: 42px;
     text-decoration: none;
 }
 
@@ -74,7 +74,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-inline-end: 8px;
+    margin-right: 8px;
     position: relative;
 }
 
@@ -117,7 +117,7 @@ nav {
 .main-menu {
     height: 100%;
     display: flex;
-    margin-inline-end: 7px;
+    margin-right: 7px;
 }
 
 .main-menu li {
@@ -127,7 +127,7 @@ nav {
 }
 
 .main-menu li:not(:last-child) {
-    margin-inline-end: 20px;
+    margin-right: 20px;
 }
 
 .main-menu a:link,
@@ -159,8 +159,8 @@ nav {
 .page-header-bottom .container {
     text-align: center;
     color: rgb(255, 255, 255);
-    padding-block-end: 240px;
-    padding-block-start: 240px;
+    padding-bottom: 240px;
+    padding-top: 240px;
 }
 
 .wordpress-theme {
@@ -179,15 +179,15 @@ h1 {
     color: rgb(255, 255, 255);
     font-weight: bold;
     text-transform: uppercase;
-    margin-block-end: 40px;
-    margin-block-start: 40px;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .buy-enjoy {
     font-size: 30px;
     color: rgb(212, 212, 212);
     font-weight: 200;
-    margin-block-end: 140px;
+    margin-bottom: 140px;
 
 }
 
@@ -203,18 +203,18 @@ h1 {
     text-align: center;
     border-top: 5px solid rgb(255, 255, 255);
     border-radius: 4px;
-    padding-block-end: 25px;
-    padding-block-start: 25px;
+    padding-bottom: 25px;
+    padding-top: 25px;
 }
 
 .explore {
     background-color: rgb(24, 207, 171);
-    margin-inline-end: 13px;
+    margin-right: 13px;
 }
 
 .purchase {
     background-color: rgb(0, 203, 246);
-    margin-inline-start: 13px;
+    margin-left: 13px;
 }
 
 main {
@@ -232,27 +232,27 @@ main {
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    padding-block-end: 115px;
-    padding-block-start: 95px;
+    padding-bottom: 115px;
+    padding-top: 95px;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold;
 }
 
 .about-us-item h3 {
-    margin-block-start: 45px;
+    margin-top: 45px;
 }
 
 .about-us-item:nth-child(odd) {
     background-color: rgb(27, 40, 49);
     color: rgb(24, 205, 169);
-    border-block-start: 7px solid rgb(24, 205, 169);
+    border-top: 7px solid rgb(24, 205, 169);
 }
 
 .about-us-item:nth-child(even) {
     background-color: rgb(24, 205, 169);
     color: rgb(255, 255, 255);
-    border-block-start: 7px solid rgb(255, 255, 255);
+    border-top: 7px solid rgb(255, 255, 255);
 }
 
 .our-services {
@@ -264,14 +264,14 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block-start: 75px;
-    padding-block-end: 100px;
+    padding-top: 75px;
+    padding-bottom: 100px;
 }
 
 .section-title {
     font-size: 36px;
     color: rgb(78, 78, 78);
-    margin-block-end: 110px;
+    margin-bottom: 110px;
 }
 
 
@@ -286,8 +286,8 @@ main {
     top: calc(100% + 35px);
     width: 75px;
     height: 4px;
-    border-block-end: 1px solid rgb(24, 205, 169);
-    border-block-start: 1px solid rgb(24, 205, 169);
+    border-bottom: 1px solid rgb(24, 205, 169);
+    border-top: 1px solid rgb(24, 205, 169);
     transform: skewX(70deg) translateX(-50%);
 }
 
@@ -300,8 +300,8 @@ main {
 
 .our-services-header-tabs-btn {
     text-align: center;
-    padding-block-end: 27px;
-    padding-block-start: 27px;
+    padding-bottom: 27px;
+    padding-top: 27px;
     background-color: rgb(248, 252, 254);
     font-size: 16px;
     color: rgb(113, 113, 113);
@@ -309,7 +309,7 @@ main {
 }
 
 .our-services-header-tabs-btn:not(:last-child) {
-    border-inline-end: 1px solid rgb(234, 234, 234);
+    border-right: 1px solid rgb(234, 234, 234);
 }
 
 .services-tabs-btn-active {
@@ -331,7 +331,7 @@ main {
 }
 
 .our-services-articles-item {
-    padding-block-start: 25px;
+    padding-top: 25px;
     display: flex;
     align-items: flex-start;
     font-size: 14px;
@@ -341,7 +341,7 @@ main {
 }
 
 .our-services-articles-item img {
-    margin-inline-end: 25px;
+    margin-right: 25px;
 }
 
 .install-now {
@@ -363,8 +363,8 @@ main {
 }
 
 .install-now .container {
-    padding-block-end: 125px;
-    padding-block-start: 125px;
+    padding-bottom: 125px;
+    padding-top: 125px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -375,13 +375,13 @@ main {
     color: rgb(24, 207, 171);
     font-weight: bold;
     text-transform: uppercase;
-    margin-block-end: 30px;
+    margin-bottom: 30px;
 }
 
 .install-now p {
     font-size: 16px;
     color: rgb(216, 216, 216);
-    margin-block-end: 75px;
+    margin-bottom: 75px;
 }
 
 .our-work {
@@ -392,7 +392,7 @@ main {
 .our-work-header-tabs {
     display: flex;
     border: 1px solid rgb(234, 234, 234);
-    margin-block-end: 70px;
+    margin-bottom: 70px;
 }
 
 .our-work-header-tabs-btn {
@@ -404,7 +404,7 @@ main {
 }
 
 .our-work-header-tabs-btn:not(:last-child) {
-    border-inline-end: 1px solid rgb(234, 234, 234);
+    border-right: 1px solid rgb(234, 234, 234);
 }
 
 .our-work-header-tabs-btn:not(:first-child) {
@@ -432,7 +432,7 @@ main {
 }
 
 .our-work-gallery {
-    margin-block-end: 70px;
+    margin-bottom: 70px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -454,9 +454,7 @@ main {
     cursor: pointer;
     background-color: rgb(24, 207, 171);
     border-radius: 4px;
-    padding-block-end: 20px;
-    padding-block-start: 20px;
-    padding-inline-end: 20px;
+    padding: 20px;
     text-align: right;
     background-image: url(../img/Sections_background/plus.png);
     background-repeat: no-repeat;
@@ -504,7 +502,7 @@ main {
     font-size: 18px;
     color: rgb(113, 113, 113);
     font-weight: bold;
-    margin-block-end: 14px;
+    margin-bottom: 14px;
 }
 
 .news-articles-item-description .autor,
@@ -532,12 +530,12 @@ main {
 
 
 .autor {
-    padding-inline-end: 15px;
-    border-inline-end: 1px solid rgb(171, 172, 173);
+    padding-right: 15px;
+    border-right: 1px solid rgb(171, 172, 173);
 }
 
 .comment {
-    padding-inline-start: 13px;
+    padding-left: 13px;
 }
 
 
@@ -563,13 +561,13 @@ main {
     position: relative;
     z-index: 1;
     text-align: center;
-    padding-block-start: 100px;
+    padding-top: 100px;
 }
 
 .about-theHam h2 {
     font-size: 36px;
     color: rgb(255, 255, 255);
-    margin-block-end: 105px;
+    margin-bottom: 105px;
 }
 
 .slide {
@@ -592,15 +590,15 @@ main {
     color: rgb(24, 207, 171);
     font-weight: bold;
     text-transform: uppercase;
-    margin-block-start: 35px;
-    margin-block-end: 15px;
+    margin-top: 35px;
+    margin-bottom: 15px;
 }
 
 .slider-title-descr {
     font-size: 14px;
     font-weight: 200;
     color: rgb(187, 187, 187);
-    margin-block-end: 40px;
+    margin-bottom: 40px;
 }
 
 .slider-img {
@@ -655,7 +653,7 @@ main {
     border: 1px solid rgb(255, 255, 255);
     cursor: pointer;
     overflow: hidden;
-    margin-block-end: 17px;
+    margin-bottom: 17px;
     margin: 15px;
     opacity: 0.5;
 }
@@ -670,8 +668,8 @@ main {
     content: '';
     width: 8px;
     height: 8px;
-    border-block-end: 2px solid rgb(255, 255, 255);
-    border-inline-start: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-left: 2px solid rgb(255, 255, 255);
     transform: translateY(-50%) rotate(45deg);
     position: absolute;
     top: 50%;
@@ -682,8 +680,8 @@ main {
     content: '';
     width: 8px;
     height: 8px;
-    border-block-end: 2px solid rgb(255, 255, 255);
-    border-inline-start: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-left: 2px solid rgb(255, 255, 255);
     transform: translateY(-50%) rotate(-135deg);
     position: absolute;
     top: 50%;
