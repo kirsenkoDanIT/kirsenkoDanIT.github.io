@@ -21,12 +21,24 @@ $(document).ready(function () {
         ".slide",
         "name"
     );
-    // const aboutTheHam = new Tabs(
-    //     ".slider-controls-img",
-    //     "slider-controls-img-active",
-    //     ".slide",
-    //     "name"
-    // );
+
+    const overlay = $(
+        `<div class="overlay">
+            <span class = "overlay-img"><i class = "fas fa-link"></i></span>
+            <span class="overlay-img"><i class="fas fa-search"></i></span>
+            <h3 class="overlay-title">creative design</h3>
+            <p class = "overlay-name"></p>
+         </div>`);
+
+    $(".our-work-gallery-item").hover(
+        function () {
+            $(this).append($(overlay));
+            $('.overlay-name').text($(this).data('name'));
+        },
+        function () {
+            $(overlay).remove();
+        }
+    );
 
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
@@ -66,7 +78,7 @@ $(document).ready(function () {
                 $(this).hide();
             $(this).css(
                 "order",
-                `${Math.floor(Math.random() * itemClass.length)}`
+                `${Math.floor(Math.random() * 100)}`
             );
         });
 
@@ -83,7 +95,7 @@ $(document).ready(function () {
             $(itemClass).each(function () {
                 $(this).css(
                     "order",
-                    `${Math.floor(Math.random() * itemClass.length)}`
+                    `${Math.floor(Math.random() * 100)}`
                 );
                 $(event.currentTarget).data(dataName) === $(this).data(dataName) ||
                     !$(event.currentTarget).data(dataName) ?
@@ -104,14 +116,16 @@ $(document).ready(function () {
     function LoadMore(itemClass, loadMoreBtnClass) {
         $(document).on("click", loadMoreBtnClass, function () {
             $(this).hide();
+            $('.loader').show();
             $(`${itemClass}:hidden`).css('order', 100);
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`)
                     .slice(0, 12)
                     .slideDown();
+                $('.loader').hide();
                 $(`${itemClass}:hidden`).length ? $(this).show() : $(this).hide();
                 clearTimeout(timeout);
-            }, 500);
+            }, 2000);
         });
     };
 
