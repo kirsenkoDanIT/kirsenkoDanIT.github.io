@@ -58,6 +58,25 @@ $(document).ready(function () {
         });
     };
 
+    // function compareRandom() {
+    //     return Math.random() - 0.5;
+    // }
+
+    // // console.log([...$(itemClass)].sort(compareRandom));
+    // const itemRandom = [...$(itemClass)].sort(compareRandom);
+    // console.log($(itemRandom));
+    // const sliceCount = count => {
+    //     // $(itemClass).hide();
+    //     $(itemRandom).hide();
+    //     $(itemRandom)
+    //         .slice(0, count)
+    //         .show();
+
+    //     // $(`${itemClass}:hidden`)
+    //     //     .slice(0, count)
+    //     //     .show();
+    // };
+
     function GalleryTabs(
         tabClass,
         tabClassActive,
