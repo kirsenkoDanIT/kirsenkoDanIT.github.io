@@ -21,12 +21,12 @@ $(document).ready(function () {
         ".slide",
         "name"
     );
-    const aboutTheHam = new Tabs(
-        ".slider-controls-img",
-        "slider-controls-img-active",
-        ".slide",
-        "name"
-    );
+    // const aboutTheHam = new Tabs(
+    //     ".slider-controls-img",
+    //     "slider-controls-img-active",
+    //     ".slide",
+    //     "name"
+    // );
 
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
@@ -44,7 +44,7 @@ $(document).ready(function () {
                     $(this).hide();
             });
         });
-    }
+    };
 
     function GalleryTabs(
         tabClass,
@@ -72,13 +72,14 @@ $(document).ready(function () {
 
         if (!defaultTab) {
             sliceCount(12);
-        }
+        };
 
         $(document).on("click", tabClass, event => {
             $(event.currentTarget)
                 .addClass(tabClassActive)
                 .siblings()
                 .removeClass(tabClassActive);
+            $(itemClass).hide()
             $(itemClass).each(function () {
                 $(this).css(
                     "order",
@@ -86,7 +87,7 @@ $(document).ready(function () {
                 );
                 $(event.currentTarget).data(dataName) === $(this).data(dataName) ||
                     !$(event.currentTarget).data(dataName) ?
-                    $(this).show() :
+                    $(this).slideDown() :
                     $(this).hide();
             });
 
@@ -98,26 +99,44 @@ $(document).ready(function () {
                 $(loadMoreBtnClass).hide() :
                 $(loadMoreBtnClass).show();
         });
-    }
+    };
 
     function LoadMore(itemClass, loadMoreBtnClass) {
         $(document).on("click", loadMoreBtnClass, function () {
             $(this).hide();
+            $(`${itemClass}:hidden`).css('order', '100');
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`)
                     .slice(0, 12)
-                    .show();
+                    .slideDown();
                 $(`${itemClass}:hidden`).length ? $(this).show() : $(this).hide();
                 clearTimeout(timeout);
             }, 500);
         });
-    }
+    };
 
     function Slider(tabClass, tabClassActive, itemClass, dataName) {
+
         let currentSlide = Math.floor(Math.random() * $(tabClass).length);
         $(tabClass)
             .eq(currentSlide)
             .addClass(tabClassActive);
+
+        const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
+        $(itemClass).each(function () {
+            $(this).data(dataName) === defaultTab ? $(this).show() : $(this).hide();
+        });
+        $(document).on("click", tabClass, event => {
+            $(event.currentTarget)
+                .addClass(tabClassActive)
+                .siblings()
+                .removeClass(tabClassActive);
+            $(itemClass).each((item) => {
+                $(event.currentTarget).data(dataName) === $(item).data(dataName) ?
+                    $(item).show() :
+                    $(item).hide();
+            });
+        });
 
         $(document).click(event => {
             currentSlide = $(`.${tabClassActive}`).index(tabClass);
@@ -129,7 +148,7 @@ $(document).ready(function () {
                 currentSlide = (currentSlide + 1) % $(tabClass).length;
             } else if ($(event.target).hasClass("slider-controls-left")) {
                 currentSlide = (currentSlide - 1) % $(tabClass).length;
-            }
+            };
 
             $(tabClass)
                 .eq(currentSlide)
@@ -142,6 +161,7 @@ $(document).ready(function () {
                     $(item).fadeIn(1000) :
                     $(item).hide();
             });
+
         });
     };
     $(document).on("click", ".main-menu li a", function (event) {
