@@ -97,7 +97,7 @@ $(document).ready(function () {
                 $(this).hide();
             $(this).css(
                 "order",
-                `${Math.floor(Math.random() * 100)}`
+                `${Math.floor(Math.random() * itemClass.length)}`
             );
         });
 
@@ -114,7 +114,7 @@ $(document).ready(function () {
             $(itemClass).each(function () {
                 $(this).css(
                     "order",
-                    `${Math.floor(Math.random() * 100)}`
+                    `${Math.floor(Math.random() * itemClass.length)}`
                 );
                 $(event.currentTarget).data(dataName) === $(this).data(dataName) ||
                     !$(event.currentTarget).data(dataName) ?
