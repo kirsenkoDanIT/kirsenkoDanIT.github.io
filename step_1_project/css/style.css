@@ -741,12 +741,24 @@ main {
     font-weight: 300;
 }
 
-body,
-html {
-    overflow-x: hidden
+footer {
+    padding: 50px 0;
+    text-align: center;
+    background-color: rgb(34, 53, 63);
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgb(174, 174, 174);
+}
+
+footer span {
+    color: rgb(24, 207, 171);
 }
 
 
+body,
+html {
+    overflow-x: hidden;
+}
 
 .loader {
     height: 100%;

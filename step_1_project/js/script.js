@@ -21,7 +21,6 @@ $(document).ready(function () {
         ".slide",
         "name"
     );
-
     const overlay = $(
         `<div class="overlay">
             <span class = "overlay-img"><i class = "fas fa-link"></i></span>
@@ -92,7 +91,7 @@ $(document).ready(function () {
         };
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
         $(itemClass).each(function () {
-            $(this).data(dataName) === defaultTab || !defaultTab ?
+            $(this).data(dataName) === defaultTab ?
                 $(this).show() :
                 $(this).hide();
             $(this).css(
@@ -100,11 +99,9 @@ $(document).ready(function () {
                 `${Math.floor(Math.random() * itemClass.length)}`
             );
         });
-
         if (!defaultTab) {
             sliceCount(12);
         };
-
         $(document).on("click", tabClass, event => {
             $(event.currentTarget)
                 .addClass(tabClassActive)
@@ -121,11 +118,9 @@ $(document).ready(function () {
                     $(this).slideDown() :
                     $(this).hide();
             });
-
             if (!$(event.currentTarget).data(dataName)) {
                 sliceCount(12);
             }
-
             $(event.currentTarget).data(dataName) ?
                 $(loadMoreBtnClass).hide() :
                 $(loadMoreBtnClass).show();
@@ -149,7 +144,6 @@ $(document).ready(function () {
     };
 
     function Slider(tabClass, tabClassActive, itemClass, dataName) {
-
         let currentSlide = Math.floor(Math.random() * $(tabClass).length);
         $(tabClass)
             .eq(currentSlide)
@@ -170,7 +164,6 @@ $(document).ready(function () {
                     $(item).hide();
             });
         });
-
         $(document).click(event => {
             currentSlide = $(`.${tabClassActive}`).index(tabClass);
             $(tabClass)
@@ -182,7 +175,6 @@ $(document).ready(function () {
             } else if ($(event.target).hasClass("slider-controls-left")) {
                 currentSlide = (currentSlide - 1) % $(tabClass).length;
             };
-
             $(tabClass)
                 .eq(currentSlide)
                 .addClass(tabClassActive);
@@ -194,7 +186,6 @@ $(document).ready(function () {
                     $(item).fadeIn(1000) :
                     $(item).hide();
             });
-
         });
     };
     $(document).on("click", ".main-menu li a", function (event) {
@@ -205,5 +196,4 @@ $(document).ready(function () {
             scrollTop: top
         }, 1000);
     });
-
 });
