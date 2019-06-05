@@ -66,7 +66,7 @@ $(document).ready(function () {
                 $(this).hide();
             $(this).css(
                 "order",
-                `${Math.floor(Math.random() * 13)}`
+                `${Math.floor(Math.random() * itemClass.length)}`
             );
         });
 
@@ -83,7 +83,7 @@ $(document).ready(function () {
             $(itemClass).each(function () {
                 $(this).css(
                     "order",
-                    `${Math.floor(Math.random() *13)}`
+                    `${Math.floor(Math.random() * itemClass.length)}`
                 );
                 $(event.currentTarget).data(dataName) === $(this).data(dataName) ||
                     !$(event.currentTarget).data(dataName) ?
@@ -104,7 +104,6 @@ $(document).ready(function () {
     function LoadMore(itemClass, loadMoreBtnClass) {
         $(document).on("click", loadMoreBtnClass, function () {
             $(this).hide();
-            // $(`${itemClass}:hidden`).css('order', `${Math.floor(Math.random() *($(itemClass).length - $(`${itemClass}:visible`).length + 1) + $(`${itemClass}:visible`).length)}`);
             $(`${itemClass}:hidden`).css('order', 100);
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`)
