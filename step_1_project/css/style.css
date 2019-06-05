@@ -57,7 +57,7 @@ body {
     color: rgb(187, 187, 187);
 }
 
-.fa-search:hover {
+.search .fa-search:hover {
     color: rgb(24, 207, 171);
 }
 
