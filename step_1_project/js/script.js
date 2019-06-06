@@ -57,25 +57,6 @@ $(document).ready(function () {
         });
     };
 
-    // function compareRandom() {
-    //     return Math.random() - 0.5;
-    // }
-
-    // // console.log([...$(itemClass)].sort(compareRandom));
-    // const itemRandom = [...$(itemClass)].sort(compareRandom);
-    // console.log($(itemRandom));
-    // const sliceCount = count => {
-    //     // $(itemClass).hide();
-    //     $(itemRandom).hide();
-    //     $(itemRandom)
-    //         .slice(0, count)
-    //         .show();
-
-    //     // $(`${itemClass}:hidden`)
-    //     //     .slice(0, count)
-    //     //     .show();
-    // };
-
     function GalleryTabs(
         tabClass,
         tabClassActive,
@@ -83,22 +64,17 @@ $(document).ready(function () {
         dataName,
         loadMoreBtnClass
     ) {
+        function compareRandom() {
+            return Math.random() - 0.5;
+        }
         const sliceCount = count => {
             $(itemClass).hide();
-            $(`${itemClass}:hidden`)
+            $(`${itemClass}:hidden`).sort(compareRandom)
                 .slice(0, count)
-                .show();
+                .slideDown()
         };
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
-        $(itemClass).each(function () {
-            $(this).data(dataName) === defaultTab ?
-                $(this).show() :
-                $(this).hide();
-            $(this).css(
-                "order",
-                `${Math.floor(Math.random() * itemClass.length)}`
-            );
-        });
+
         if (!defaultTab) {
             sliceCount(12);
         };
@@ -113,8 +89,7 @@ $(document).ready(function () {
                     "order",
                     `${Math.floor(Math.random() * itemClass.length)}`
                 );
-                $(event.currentTarget).data(dataName) === $(this).data(dataName) ||
-                    !$(event.currentTarget).data(dataName) ?
+                $(event.currentTarget).data(dataName) === $(this).data(dataName) ?
                     $(this).slideDown() :
                     $(this).hide();
             });
