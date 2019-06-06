@@ -68,7 +68,6 @@ $(document).ready(function () {
         dataName,
         loadMoreBtnClass
     ) {
-
         const sliceCount = count => {
             $(itemClass).hide();
             $(`${itemClass}:hidden`)
@@ -103,10 +102,8 @@ $(document).ready(function () {
             });
             if (!$(event.currentTarget).data(dataName)) {
                 sliceCount(12);
-            }
-            $(event.currentTarget).data(dataName) ?
-                $(loadMoreBtnClass).hide() :
                 $(loadMoreBtnClass).show();
+            } else $(loadMoreBtnClass).hide();
         });
     };
 
@@ -114,9 +111,9 @@ $(document).ready(function () {
         $(document).on("click", loadMoreBtnClass, function () {
             $(this).hide();
             $('.loader').show();
-            $(`${itemClass}:hidden`).css('order', $(`${itemClass}:visible`).length);
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`)
+                    .css('order', $(`${itemClass}:visible`).length)
                     .sort(compareRandom)
                     .slice(0, 12)
                     .slideDown();
@@ -163,10 +160,7 @@ $(document).ready(function () {
                 .eq(currentSlide)
                 .addClass(tabClassActive);
             $(itemClass).each((i, item) => {
-                $(item).data(dataName) ===
-                    $(tabClass)
-                    .eq(currentSlide)
-                    .data(dataName) ?
+                $(item).data(dataName) === $(tabClass).eq(currentSlide).data(dataName) ?
                     $(item).fadeIn(1000) :
                     $(item).hide();
             });
