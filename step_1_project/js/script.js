@@ -39,6 +39,10 @@ $(document).ready(function () {
         }
     );
 
+    function compareRandom() {
+        return Math.random() - 0.5;
+    }
+
     function Tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
         $(itemClass).each(function () {
@@ -64,12 +68,11 @@ $(document).ready(function () {
         dataName,
         loadMoreBtnClass
     ) {
-        function compareRandom() {
-            return Math.random() - 0.5;
-        }
+
         const sliceCount = count => {
             $(itemClass).hide();
-            $(`${itemClass}:hidden`).sort(compareRandom)
+            $(`${itemClass}:hidden`)
+                .sort(compareRandom)
                 .slice(0, count)
                 .slideDown()
         };
@@ -85,10 +88,15 @@ $(document).ready(function () {
                 .removeClass(tabClassActive);
             $(itemClass).hide()
             $(itemClass).each(function () {
-                $(this).css(
+                if ($(event.currentTarget).data(dataName)) {
+                    $(this).css(
+                        "order",
+                        `${Math.floor(Math.random() * itemClass.length)}`
+                    )
+                } else $(this).css(
                     "order",
-                    `${Math.floor(Math.random() * itemClass.length)}`
-                );
+                    ""
+                )
                 $(event.currentTarget).data(dataName) === $(this).data(dataName) ?
                     $(this).slideDown() :
                     $(this).hide();
@@ -106,9 +114,10 @@ $(document).ready(function () {
         $(document).on("click", loadMoreBtnClass, function () {
             $(this).hide();
             $('.loader').show();
-            $(`${itemClass}:hidden`).css('order', 100);
+            $(`${itemClass}:hidden`).css('order', $(`${itemClass}:visible`).length);
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`)
+                    .sort(compareRandom)
                     .slice(0, 12)
                     .slideDown();
                 $('.loader').hide();
