@@ -37,7 +37,7 @@ $(document).ready(function () {
   })
 
   $(document).on('scroll', () => {
-    ($(document).scrollTop() >= $(window).height()) ? $('.arrow').fadeIn(500): $('.arrow').fadeOut(500);
+    ($(document).scrollTop() > $(window).height()) ? $('.arrow').fadeIn(500): $('.arrow').fadeOut(500);
   });
 
 });
