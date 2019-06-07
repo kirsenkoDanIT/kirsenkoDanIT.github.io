@@ -12,6 +12,7 @@ body {
   color: #3d3d3d;
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
+  position: relative;
 }
 
 .content-wrap {
@@ -47,17 +48,20 @@ body {
 #burger {
   display: none;
 }
+
 .burger {
   display: none;
   color: #fff;
   cursor: pointer;
 }
+
 .burger_menu {
   width: 50%;
   display: flex;
   justify-content: flex-end;
   position: relative;
 }
+
 .main-menu {
   margin: 0;
   padding: 0;
@@ -65,6 +69,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .main-menu li {
   margin-left: 26px;
 }
@@ -477,17 +482,17 @@ main p {
   line-height: 1;
 }
 
-.options li > :nth-child(1) {
+.options li> :nth-child(1) {
   width: 120px;
   font-weight: 600;
 }
 
-.options li > :nth-child(2) {
+.options li> :nth-child(2) {
   display: flex;
   align-items: center;
 }
 
-.options li > :nth-child(2):before {
+.options li> :nth-child(2):before {
   content: ":";
   margin-right: 10px;
 }
@@ -1033,6 +1038,31 @@ input.mail-img {
   right: 10px;
   bottom: 50%;
   transform: translateY(50%);
+}
+
+button.see-more {
+  display: block;
+  width: 200px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #363636;
+  border-radius: 2px;
+  border: 2px solid #363636;
+  padding-top: 17.5px;
+  padding-bottom: 17.5px;
+  transition: 0.5s;
+  text-decoration: none;
+  margin: auto;
+}
+
+.arrow {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  display: none;
+  z-index: 100;
 }
 
 /* @media (max-width: 1366px){
