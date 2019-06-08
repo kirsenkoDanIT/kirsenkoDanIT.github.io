@@ -161,7 +161,7 @@ $(document).ready(function () {
                 .addClass(tabClassActive);
             $(itemClass).each((i, item) => {
                 $(item).data(dataName) === $(tabClass).eq(currentSlide).data(dataName) ?
-                    $(item).fadeIn(1000) :
+                    $(item).fadeIn(500) :
                     $(item).hide();
             });
         });
