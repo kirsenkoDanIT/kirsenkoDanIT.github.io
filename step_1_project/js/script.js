@@ -1,21 +1,21 @@
 "use strict";
 
 $(document).ready(function () {
-    const ourServices = new Tabs(
+    tabs(
         ".our-services-header-tabs-btn",
         "services-tabs-btn-active",
         ".our-services-articles-item",
         "name"
     );
-    const ourWork = new GalleryTabs(
+    galleryTabs(
         ".our-work-header-tabs-btn",
         "work-tabs-btn-active",
         ".our-work-gallery-item",
         "name",
         ".load-more"
     );
-    const loadMore = new LoadMore(".our-work-gallery-item", ".load-more");
-    const aboutTheHamSlider = new Slider(
+    loadMore(".our-work-gallery-item", ".load-more");
+    slider(
         ".slider-controls-img",
         "slider-controls-img-active",
         ".slide",
@@ -43,7 +43,7 @@ $(document).ready(function () {
         return Math.random() - 0.5;
     }
 
-    function Tabs(tabClass, tabClassActive, itemClass, dataName) {
+    function tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
         $(itemClass).each(function () {
             $(this).data(dataName) === defaultTab ? $(this).show() : $(this).hide();
@@ -61,7 +61,7 @@ $(document).ready(function () {
         });
     };
 
-    function GalleryTabs(
+    function galleryTabs(
         tabClass,
         tabClassActive,
         itemClass,
@@ -107,7 +107,7 @@ $(document).ready(function () {
         });
     };
 
-    function LoadMore(itemClass, loadMoreBtnClass) {
+    function loadMore(itemClass, loadMoreBtnClass) {
         $(document).on("click", loadMoreBtnClass, function () {
             $(this).hide();
             $('.loader').show();
@@ -124,7 +124,7 @@ $(document).ready(function () {
         });
     };
 
-    function Slider(tabClass, tabClassActive, itemClass, dataName) {
+    function slider(tabClass, tabClassActive, itemClass, dataName) {
         let currentSlide = Math.floor(Math.random() * $(tabClass).length);
         $(tabClass)
             .eq(currentSlide)
