@@ -359,6 +359,8 @@ main {
     position: relative;
 }
 
+
+
 .install-now::before {
     content: '';
     background-color: rgba(0, 0, 0, 0.78);
@@ -389,6 +391,10 @@ main {
     font-size: 16px;
     color: rgb(216, 216, 216);
     margin-bottom: 75px;
+}
+
+.install-now .explore {
+    margin: 0;
 }
 
 .our-work {
