@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $("#header-slider").owlCarousel({
     items: 1,
     loop: true,
@@ -19,25 +19,28 @@ $(document).ready(function () {
   });
 
   function Archor(archorClass) {
-    $(document).on("click", archorClass, function (event) {
+    $(document).on("click", archorClass, function(event) {
       event.preventDefault();
-      const id = $(this).attr('href'),
+      const id = $(this).attr("href"),
         top = $(id).offset().top;
-      $('body,html').animate({
-        scrollTop: top
-      }, 1000);
+      $("body,html").animate(
+        {
+          scrollTop: top
+        },
+        1000
+      );
     });
   }
-  const up = new Archor('.arrow');
-  const down = new Archor('.main-menu a');
+  const up = new Archor(".arrow");
+  const down = new Archor(".main-menu a");
 
-
-  $(document).on('click', 'button.see-more', function () {
-    $('#who_we_are').slideToggle();
-  })
-
-  $(document).on('scroll', () => {
-    ($(document).scrollTop() > $(window).height()) ? $('.arrow').fadeIn(500): $('.arrow').fadeOut(500);
+  $(document).on("click", "button.see-more", function() {
+    $("#who_we_are").slideToggle();
   });
 
+  $(document).on("scroll", () => {
+    $(document).scrollTop() > $(window).height()
+      ? $(".arrow").fadeIn(500)
+      : $(".arrow").fadeOut(500);
+  });
 });

@@ -482,17 +482,17 @@ main p {
   line-height: 1;
 }
 
-.options li> :nth-child(1) {
+.options li > :nth-child(1) {
   width: 120px;
   font-weight: 600;
 }
 
-.options li> :nth-child(2) {
+.options li > :nth-child(2) {
   display: flex;
   align-items: center;
 }
 
-.options li> :nth-child(2):before {
+.options li > :nth-child(2):before {
   content: ":";
   margin-right: 10px;
 }

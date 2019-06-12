@@ -59,7 +59,7 @@ $(document).ready(function () {
                     $(this).hide();
             });
         });
-    };
+    }
 
     function galleryTabs(
         tabClass,
@@ -79,7 +79,7 @@ $(document).ready(function () {
 
         if (!defaultTab) {
             sliceCount(12);
-        };
+        }
         $(document).on("click", tabClass, event => {
             $(event.currentTarget)
                 .addClass(tabClassActive)
@@ -105,7 +105,7 @@ $(document).ready(function () {
                 $(loadMoreBtnClass).show();
             } else $(loadMoreBtnClass).hide();
         });
-    };
+    }
 
     function loadMore(itemClass, loadMoreBtnClass) {
         $(document).on("click", loadMoreBtnClass, function () {
@@ -122,7 +122,7 @@ $(document).ready(function () {
                 clearTimeout(timeout);
             }, 2000);
         });
-    };
+    }
 
     function slider(tabClass, tabClassActive, itemClass, dataName) {
         let currentSlide = Math.floor(Math.random() * $(tabClass).length);
@@ -155,7 +155,7 @@ $(document).ready(function () {
                 currentSlide = (currentSlide + 1) % $(tabClass).length;
             } else if ($(event.target).hasClass("slider-controls-left")) {
                 currentSlide = (currentSlide - 1) % $(tabClass).length;
-            };
+            }
             $(tabClass)
                 .eq(currentSlide)
                 .addClass(tabClassActive);
@@ -165,7 +165,7 @@ $(document).ready(function () {
                     $(item).hide();
             });
         });
-    };
+    }
     $(document).on("click", ".main-menu li a", function (event) {
         event.preventDefault();
         const id = $(this).attr('href'),
