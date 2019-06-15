@@ -1,6 +1,12 @@
 "use strict";
 
 $(document).ready(function () {
+    $.fn.randomSort = function(){
+        function compareRandom() {
+            return Math.random() - 0.5;
+        }
+        return $(this).sort(compareRandom)
+      };
     tabs(
         ".our-services-header-tabs-btn",
         "services-tabs-btn-active",
@@ -43,6 +49,8 @@ $(document).ready(function () {
         return Math.random() - 0.5;
     }
 
+    
+
     function tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
         $(itemClass).each(function () {
@@ -68,10 +76,11 @@ $(document).ready(function () {
         dataName,
         loadMoreBtnClass
     ) {
-        const sliceCount = count => {
+        const sliceCount =  (count) => {
             $(itemClass).hide();
             $(`${itemClass}:hidden`)
-                .sort(compareRandom)
+            .randomSort()
+                // .sort(compareRandom)
                 .slice(0, count)
                 .slideDown()
         };
@@ -114,7 +123,8 @@ $(document).ready(function () {
             const timeout = setTimeout(() => {
                 $(`${itemClass}:hidden`)
                     .css('order', $(`${itemClass}:visible`).length)
-                    .sort(compareRandom)
+                    // .sort(compareRandom)
+                    .randomSort()
                     .slice(0, 12)
                     .slideDown();
                 $('.loader').hide();
