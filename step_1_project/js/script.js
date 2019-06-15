@@ -45,11 +45,9 @@ $(document).ready(function () {
         }
     );
 
-    function compareRandom() {
-        return Math.random() - 0.5;
-    }
-
-    
+    // function compareRandom() {
+    //     return Math.random() - 0.5;
+    // }
 
     function tabs(tabClass, tabClassActive, itemClass, dataName) {
         const defaultTab = $(`${tabClass}.${tabClassActive}`).data(dataName);
