@@ -6,8 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
 
 body {
-    font-family: 'Lato',
-        sans-serif;
+    @include fontFamily('Lato');
     height: 100%;
     color: $text;
 }
@@ -29,8 +28,7 @@ body {
 .logo-text {
     font-size: 12px;
     color: $white;
-    font-family: 'Montserrat',
-        sans-serif;
+    @include fontFamily('Montserrat');
     font-weight: 500;
     margin-left: 19px;
 }
@@ -142,8 +140,7 @@ body {
         a {
             height: 100%;
             display: block;
-            font-family: 'Lato',
-                sans-serif;
+            @include fontFamily('Lato');
             font-size: 12px;
             font-weight: 400;
             color: $menuText;
@@ -420,8 +417,7 @@ body {
 
     &__text {
         font-size: 12px;
-        font-family: 'Montserrat',
-            sans-serif;
+        @include fontFamily('Montserrat');
         color: $white;
     }
 
@@ -682,8 +678,8 @@ body {
                 padding: 0;
                 border-bottom: none;
                 text-transform: uppercase;
-                font-family: 'Montserrat',
-                    sans-serif;
+                @include fontFamily('Montserrat');
+
 
                 &:hover {
                     background-color: transparent;
