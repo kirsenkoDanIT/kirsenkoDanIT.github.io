@@ -1,0 +1,891 @@
+@import 'tech/variables';
+@import 'tech/mixins';
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800,900&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+
+body {
+    font-family: 'Lato',
+        sans-serif;
+    height: 100%;
+    color: $text;
+}
+
+.wrap {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    background-color: $grey;
+    justify-content: space-between;
+    min-height: 37px;
+    width: 100%;
+}
+
+.logo-text {
+    font-size: 12px;
+    color: $white;
+    font-family: 'Montserrat',
+        sans-serif;
+    font-weight: 500;
+    margin-left: 19px;
+}
+
+.logo-img {
+    display: none;
+}
+
+.page-nav {
+    position: relative;
+}
+
+.burger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $darkGrey;
+    height: 37px;
+    width: 40px;
+
+    &__open {
+        width: 16px;
+        height: 14px;
+        padding: 1px 0;
+        border-top: 1px solid $burgerBorder;
+        border-bottom: 1px solid $burgerBorder;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    &__inner {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $white;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 1px;
+            background-color: $burgerBorder;
+            position: absolute;
+            right: -2px;
+            top: 0;
+            bottom: 0;
+        }
+
+        &::before {
+            content: '';
+            width: 1px;
+            background-color: $burgerBorder;
+            position: absolute;
+            left: -2px;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    &__close {
+        width: 43px;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        transform: rotate(45deg);
+        margin-top: -2px;
+        display: none;
+
+        &--flex {
+            display: flex;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+
+            height: 2px;
+            width: 21px;
+            background-color: $white;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 22px;
+            background-color: $white;
+        }
+
+    }
+
+}
+
+.main-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 182px;
+    box-shadow: 0.5px 0.866px 3px rgba(0, 0, 0, 0.35);
+    background-color: $menuBgr;
+    padding-bottom: 5px;
+
+    li {
+
+        a {
+            height: 100%;
+            display: block;
+            font-family: 'Lato',
+                sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: $menuText;
+            padding-left: 12px;
+            border-bottom: 2px solid $menuBrd;
+
+            &:hover {
+                background-color: $menuBgrDarker;
+            }
+        }
+
+        &:first-child a {
+            padding-top: 12px;
+            padding-bottom: 9px;
+        }
+
+        &:nth-child(2) a {
+            padding-top: 8px;
+            padding-bottom: 9px;
+        }
+
+        &:nth-child(3) a {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        &:nth-child(4) a {
+            padding-top: 9px;
+            padding-bottom: 8px;
+        }
+
+        &:nth-child(5) a {
+            padding-top: 9px;
+            padding-bottom: 5px;
+        }
+
+
+
+    }
+
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.banner {
+    padding: 17px 20px 95px 20px;
+    min-height: 172px;
+    width: 100%;
+
+    &--bgr-pizza {
+        background-image: url(../img/header-fon.png);
+        background-size: cover;
+        background-position: bottom 0 left 0;
+        background-repeat: no-repeat;
+    }
+
+    &__text {
+        font-size: 16px;
+        color: $white;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+
+    &__link {
+        display: block;
+        font-size: 14px;
+        color: $linkBlue;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+}
+
+.categories {
+    margin-top: 4px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2px;
+    width: 100%;
+}
+
+.product {
+    display: flex;
+
+
+    &__text {
+        font-size: 20px;
+        color: $white;
+        font-weight: 700;
+        text-align: center;
+        width: 78%;
+
+        &--bgr-pizza {
+            background: url(../img/product-fon11.png) no-repeat;
+            padding-top: 25px;
+            min-height: 75px;
+        }
+
+        &--bgr-salad {
+            background: url(../img/product-fon22.png) no-repeat 0 -2px;
+            padding-top: 27px;
+            min-height: 74px;
+        }
+
+        &--bgr-dessert {
+            background: url(../img/product-fon33.png) no-repeat -2px -1px;
+            padding-top: 26px;
+            min-height: 74px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        background-color: $green;
+        width: 22%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__image {
+        width: 22px;
+        height: 22px;
+        fill: $white;
+    }
+}
+
+.content-title {
+    width: 100%;
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+    }
+
+    p {
+        font-size: 10px;
+        color: $lightGrey;
+        margin-left: 2px;
+    }
+
+    &-logo {
+        display: none;
+    }
+
+}
+
+
+.menu-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.menu-block {
+    width: 100%;
+
+    &__title {
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        min-height: 37px;
+        padding-top: 9px;
+        padding-left: 18px;
+        margin-top: 9.5px;
+    }
+}
+
+.menu-block:nth-child(odd) .menu-block {
+    &__title {
+        color: $green;
+        background-color: $grey;
+    }
+
+}
+
+.menu-block:nth-child(even) .menu-block {
+    &__title {
+        color: $white;
+        background-color: $green;
+        margin-top: 13px;
+    }
+
+}
+
+.menu {
+    padding: 0 17px 18px 18px;
+
+    &__title {
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: uppercase;
+        min-height: 25px;
+        padding: 8px 0;
+        margin-top: 10px;
+        background-size: 31px;
+
+
+        &--pizza {
+            background-image: url(../img/menu1.png);
+            background-repeat: no-repeat;
+            background-position: right -1px center;
+        }
+
+        &--wine {
+            background-image: url(../img/menu2.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+            margin-top: 12px;
+        }
+
+        &--coffe {
+            background-image: url(../img/menu3.png);
+            background-repeat: no-repeat;
+            background-position: right -2px center;
+        }
+
+        &--beer {
+            background-image: url(../img/menu4.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+            margin-top: 12px;
+
+        }
+    }
+
+    &__card {
+        padding-top: 11px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+
+    &__name {
+        font-size: 13.5px;
+        font-weight: 400;
+    }
+
+    &__price {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    &__description {
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+}
+
+.page-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 55px;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    background-color: $green;
+    margin-top: 30px;
+
+    &__text {
+        font-size: 12px;
+        font-family: 'Montserrat',
+            sans-serif;
+        color: $white;
+    }
+
+    &__logo {
+        display: none;
+    }
+}
+
+
+@media(min-width:321px) {
+    .wrap {
+        max-width: 100%;
+    }
+
+    .product {
+        &__text {
+
+            &--bgr-pizza {
+                background: url(../img/product-fon1.png) no-repeat;
+                background-size: cover;
+                background-position: bottom 0 left 0;
+            }
+
+            &--bgr-salad {
+                background: url(../img/product-fon2.png) no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            &--bgr-dessert {
+                background: url(../img/product-fon3.png) no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}
+
+@media(min-width:640px) {
+    .logo-text {
+        font-size: 24px;
+        margin-left: 38px;
+    }
+
+    .burger-menu {
+
+        height: 75px;
+        width: 82px;
+
+        &__open {
+            width: 30px;
+            height: 20px;
+            padding: 0;
+            border: none;
+        }
+
+        &__inner {
+            height: 4px;
+
+            &::after {
+                content: none;
+            }
+
+            &::before {
+                content: none;
+            }
+        }
+
+        &__close {
+            width: 25px;
+            height: 25px;
+
+            &::after {
+                height: 4px;
+                width: 30px;
+            }
+
+            &::before {
+                width: 4px;
+                height: 30px;
+            }
+        }
+    }
+
+    .main-menu {
+
+        width: 243px;
+
+        li {
+            a,
+            &:first-child a,
+
+            &:nth-child(2) a,
+
+            &:nth-child(3) a,
+
+            &:nth-child(4) a,
+
+            &:nth-child(5) a {
+                font-size: 14px;
+                padding: 15px 30px;
+                border-bottom: 1px solid $menuBrd;
+            }
+
+        }
+    }
+
+    .banner {
+        padding: 28px 38px 200px 38px;
+
+        &__text {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        &__link {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    }
+
+    .categories {
+        margin-top: 6px;
+        grid-gap: 3px;
+    }
+
+    .product {
+
+        &__text {
+            font-size: 36px;
+            padding: 55px 0;
+        }
+
+
+        &__image {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .content-title {
+        margin-top: 40px;
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .menu-block {
+
+        &__title {
+            font-size: 40px;
+            margin-top: 20px;
+            padding: 18px 36px;
+        }
+
+        &:nth-child(even) .menu-block {
+            &__title {
+                margin-top: 20px;
+            }
+        }
+
+    }
+
+    .menu {
+        padding: 0 25px 20px 25px;
+
+        &__title {
+            font-size: 30px;
+            background-size: 48px;
+            padding: 16px 0;
+            margin-top: 20px;
+
+            &--wine {
+                margin-top: 12px;
+            }
+
+            &--beer {
+                margin-top: 12px;
+            }
+        }
+
+        &__card {
+            padding-top: 23px;
+        }
+
+        &__item {
+            margin-bottom: 16px;
+        }
+
+        &__name {
+            font-size: 27px;
+        }
+
+        &__price {
+            font-size: 27px;
+        }
+
+        &__description {
+            font-size: 18px;
+        }
+    }
+
+    .page-footer {
+        margin-top: 95px;
+        min-height: 95px;
+        padding: 28px 0;
+
+        &__text {
+            font-size: 18px;
+        }
+    }
+}
+
+@media(min-width:980px) {
+    .page-header {
+        padding: 9px 45px 9px 35px;
+    }
+
+
+    .logo-text,
+    .burger-menu {
+        display: none;
+    }
+
+    .logo-img {
+        display: block;
+    }
+
+    .main-menu {
+        display: flex;
+        position: static;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 0;
+        box-shadow: 0 0 0 transparent;
+        background-color: transparent;
+        align-items: center;
+
+        li {
+            a,
+            &:first-child a,
+
+            &:nth-child(2) a,
+
+            &:nth-child(3) a,
+
+            &:nth-child(4) a,
+
+            &:nth-child(5) a {
+                font-size: 15px;
+                color: $white;
+                padding: 0;
+                border-bottom: none;
+                text-transform: uppercase;
+                font-family: 'Montserrat',
+                    sans-serif;
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .banner {
+        padding: 60px 38px 267px 38px;
+
+        &__text {
+            font-size: 54px;
+            margin-bottom: 0;
+        }
+
+        &__link {
+            margin-top: 55px;
+            font-size: 34px;
+        }
+    }
+
+    .categories {
+        grid-gap: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product {
+        &__text {
+            width: 100%;
+            font-size: 38px;
+            padding: 145px 0;
+            background-position: center;
+        }
+
+
+        &__link {
+            display: none;
+        }
+    }
+
+    .content-title {
+        padding: 0 30px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 45px;
+
+        h2 {
+            font-size: 34px;
+        }
+
+        &-logo {
+            display: block;
+        }
+
+    }
+
+    .menu-block {
+        width: 50%;
+
+        &__title {
+            font-size: 34px;
+            margin-top: 5px;
+            padding: 26px 15px;
+        }
+
+        &:nth-child(even) .menu-block {
+            &__title {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .menu {
+        padding: 0 11px 20px 16px;
+
+        &__title {
+            font-size: 26px;
+            background-size: 44px;
+            margin-top: 15px;
+
+            &--wine {
+                margin-top: 25px;
+                margin-bottom: 0;
+            }
+
+            &--beer {
+                margin-top: 25px;
+                margin-bottom: 0;
+            }
+        }
+
+        &__name {
+            font-size: 24px;
+        }
+
+        &__price {
+            font-size: 24px;
+        }
+
+        &__description {
+            font-size: 16px;
+        }
+    }
+
+    .page-footer {
+        margin-top: 65px;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0 30px;
+
+        &__text {
+            font-size: 18px;
+            margin-left: 8px;
+        }
+
+        &__logo {
+            display: block;
+            margin-right: auto;
+        }
+    }
+}
+
+
+@media(min-width:1200px) {
+    .wrap {
+        max-width: 1200px;
+    }
+
+    .banner {
+        padding: 50px 35px 380px 35px;
+
+        &__text {
+            font-size: 62px;
+            margin-bottom: 5px;
+        }
+
+        &__link {
+            margin-top: 60px;
+            font-size: 38px;
+        }
+    }
+
+    .product {
+        &__text {
+            font-size: 43px;
+            padding: 175px 0;
+        }
+    }
+
+    .content-title {
+        margin-top: 55px;
+        padding: 0 10px 0 25px;
+
+        h2 {
+            font-size: 40px;
+        }
+
+    }
+
+    .menu-block {
+
+        &__title {
+            font-size: 40px;
+            margin-top: 0;
+            padding: 22px 15px;
+        }
+
+        &:nth-child(even) .menu-block {
+            &__title {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .menu {
+        padding: 0 20px 20px 16px;
+
+        &__card {
+            padding-top: 25px;
+        }
+
+        &__title {
+            font-size: 30px;
+            background-size: 48px;
+        }
+
+        &__name {
+            font-size: 27px;
+        }
+
+        &__price {
+            font-size: 27px;
+        }
+
+        &__description {
+            font-size: 18px;
+        }
+    }
+
+}
