@@ -423,461 +423,461 @@ body {
 }
 
 
-// @media(min-width:321px) {
-//     .wrap {
-//         max-width: 100%;
-//     }
-
-//     .product {
-//         &__text {
-
-//             &--bgr-pizza {
-//                 background: url(../img/product-fon1.png) no-repeat;
-//                 background-size: cover;
-//                 background-position: bottom 0 left 0;
-//             }
-
-//             &--bgr-salad {
-//                 background: url(../img/product-fon2.png) no-repeat;
-//                 background-size: cover;
-//                 background-position: center;
-//             }
-
-//             &--bgr-dessert {
-//                 background: url(../img/product-fon3.png) no-repeat;
-//                 background-size: cover;
-//                 background-position: center;
-//             }
-//         }
-//     }
-// }
-
-// @media(min-width:640px) {
-//     .logo-text {
-//         font-size: 24px;
-//         margin-left: 38px;
-//     }
-
-//     .burger-menu {
-
-//         height: 75px;
-//         width: 82px;
-
-//         &__open {
-//             width: 30px;
-//             height: 20px;
-//             padding: 0;
-//             border: none;
-//         }
-
-//         &__inner {
-//             height: 4px;
-
-//             &::after {
-//                 content: none;
-//             }
-
-//             &::before {
-//                 content: none;
-//             }
-//         }
-
-//         &__close {
-//             width: 25px;
-//             height: 25px;
-
-//             &::after {
-//                 height: 4px;
-//                 width: 30px;
-//             }
-
-//             &::before {
-//                 width: 4px;
-//                 height: 30px;
-//             }
-//         }
-//     }
-
-//     .main-menu {
-
-//         width: 243px;
-
-//         li {
-//             a,
-//             &:first-child a,
-
-//             &:nth-child(2) a,
-
-//             &:nth-child(3) a,
-
-//             &:nth-child(4) a,
-
-//             &:nth-child(5) a {
-//                 font-size: 14px;
-//                 padding: 15px 30px;
-//                 border-bottom: 1px solid $menuBrd;
-//             }
-
-//         }
-//     }
-
-//     .banner {
-//         padding: 28px 38px 200px 38px;
-
-//         &__text {
-//             font-size: 36px;
-//             margin-bottom: 10px;
-//         }
-
-//         &__link {
-//             margin-top: 20px;
-//             font-size: 24px;
-//         }
-//     }
-
-//     .categories {
-//         margin-top: 6px;
-//         grid-gap: 3px;
-//     }
-
-//     .product {
-
-//         &__text {
-//             font-size: 36px;
-//             padding: 55px 0;
-//         }
-
-
-//         &__image {
-//             width: 40px;
-//             height: 40px;
-//         }
-//     }
-
-//     .content-title {
-//         margin-top: 40px;
-
-//         h2 {
-//             font-size: 40px;
-//             margin-bottom: 6px;
-//         }
-
-//         p {
-//             font-size: 20px;
-//         }
-//     }
-
-//     .menu-block {
-
-//         &__title {
-//             font-size: 40px;
-//             margin-top: 20px;
-//             padding: 18px 36px;
-//         }
-
-//         &:nth-child(even) .menu-block {
-//             &__title {
-//                 margin-top: 20px;
-//             }
-//         }
-
-//     }
-
-//     .menu {
-//         padding: 0 25px 20px 25px;
-
-//         &__title {
-//             font-size: 30px;
-//             background-size: 48px;
-//             padding: 16px 0;
-//             margin-top: 20px;
-
-//             &--wine {
-//                 margin-top: 12px;
-//             }
-
-//             &--beer {
-//                 margin-top: 12px;
-//             }
-//         }
-
-//         &__card {
-//             padding-top: 23px;
-//         }
-
-//         &__item {
-//             margin-bottom: 16px;
-//         }
-
-//         &__name {
-//             font-size: 27px;
-//         }
-
-//         &__price {
-//             font-size: 27px;
-//         }
-
-//         &__description {
-//             font-size: 18px;
-//         }
-//     }
-
-//     .page-footer {
-//         margin-top: 95px;
-//         min-height: 95px;
-//         padding: 28px 0;
-
-//         &__text {
-//             font-size: 18px;
-//         }
-//     }
-// }
-
-// @media(min-width:980px) {
-//     .page-header {
-//         padding: 9px 45px 9px 35px;
-//     }
-
-
-//     .logo-text,
-//     .burger-menu {
-//         display: none;
-//     }
-
-//     .logo-img {
-//         display: block;
-//     }
-
-//     .main-menu {
-//         display: flex;
-//         position: static;
-//         width: 100%;
-//         height: 100%;
-//         padding-bottom: 0;
-//         box-shadow: 0 0 0 transparent;
-//         background-color: transparent;
-//         align-items: center;
-
-//         li {
-//             a,
-//             &:first-child a,
-
-//             &:nth-child(2) a,
-
-//             &:nth-child(3) a,
-
-//             &:nth-child(4) a,
-
-//             &:nth-child(5) a {
-//                 font-size: 15px;
-//                 color: $white;
-//                 padding: 0;
-//                 border-bottom: none;
-//                 text-transform: uppercase;
-//                 @include fontFamily('Montserrat');
-
-
-//                 &:hover {
-//                     background-color: transparent;
-//                 }
-//             }
-
-//             &:not(:last-child) {
-//                 margin-right: 30px;
-//             }
-//         }
-//     }
-
-//     .banner {
-//         padding: 60px 38px 267px 38px;
-
-//         &__text {
-//             font-size: 54px;
-//             margin-bottom: 0;
-//         }
-
-//         &__link {
-//             margin-top: 55px;
-//             font-size: 34px;
-//         }
-//     }
-
-//     .categories {
-//         grid-gap: 0;
-//         grid-template-columns: repeat(3, 1fr);
-//     }
-
-//     .product {
-//         &__text {
-//             width: 100%;
-//             font-size: 38px;
-//             padding: 145px 0;
-//             background-position: center;
-//         }
-
-
-//         &__link {
-//             display: none;
-//         }
-//     }
-
-//     .content-title {
-//         padding: 0 30px;
-//         justify-content: space-between;
-//         align-items: center;
-//         margin-top: 45px;
-
-//         h2 {
-//             font-size: 34px;
-//         }
-
-//         &-logo {
-//             display: block;
-//         }
-
-//     }
-
-//     .menu-block {
-//         width: 50%;
-
-//         &__title {
-//             font-size: 34px;
-//             margin-top: 5px;
-//             padding: 26px 15px;
-//         }
-
-//         &:nth-child(even) .menu-block {
-//             &__title {
-//                 margin-top: 5px;
-//             }
-//         }
-//     }
-
-//     .menu {
-//         padding: 0 11px 20px 16px;
-
-//         &__title {
-//             font-size: 26px;
-//             background-size: 44px;
-//             margin-top: 15px;
-
-//             &--wine {
-//                 margin-top: 25px;
-//                 margin-bottom: 0;
-//             }
-
-//             &--beer {
-//                 margin-top: 25px;
-//                 margin-bottom: 0;
-//             }
-//         }
-
-//         &__name {
-//             font-size: 24px;
-//         }
-
-//         &__price {
-//             font-size: 24px;
-//         }
-
-//         &__description {
-//             font-size: 16px;
-//         }
-//     }
-
-//     .page-footer {
-//         margin-top: 65px;
-//         flex-direction: row;
-//         justify-content: flex-end;
-//         padding: 0 30px;
-
-//         &__text {
-//             font-size: 18px;
-//             margin-left: 8px;
-//         }
-
-//         &__logo {
-//             display: block;
-//             margin-right: auto;
-//         }
-//     }
-// }
-
-
-// @media(min-width:1200px) {
-//     .wrap {
-//         max-width: 1200px;
-//     }
-
-//     .banner {
-//         padding: 50px 35px 380px 35px;
-
-//         &__text {
-//             font-size: 62px;
-//             margin-bottom: 5px;
-//         }
-
-//         &__link {
-//             margin-top: 60px;
-//             font-size: 38px;
-//         }
-//     }
-
-//     .product {
-//         &__text {
-//             font-size: 43px;
-//             padding: 175px 0;
-//         }
-//     }
-
-//     .content-title {
-//         margin-top: 55px;
-//         padding: 0 10px 0 25px;
-
-//         h2 {
-//             font-size: 40px;
-//         }
-
-//     }
-
-//     .menu-block {
-
-//         &__title {
-//             font-size: 40px;
-//             margin-top: 0;
-//             padding: 22px 15px;
-//         }
-
-//         &:nth-child(even) .menu-block {
-//             &__title {
-//                 margin-top: 0;
-//             }
-//         }
-//     }
-
-//     .menu {
-//         padding: 0 20px 20px 16px;
-
-//         &__card {
-//             padding-top: 25px;
-//         }
-
-//         &__title {
-//             font-size: 30px;
-//             background-size: 48px;
-//         }
-
-//         &__name {
-//             font-size: 27px;
-//         }
-
-//         &__price {
-//             font-size: 27px;
-//         }
-
-//         &__description {
-//             font-size: 18px;
-//         }
-//     }
-
-// }
+@media(min-width:321px) {
+    .wrap {
+        max-width: 100%;
+    }
+
+    .product {
+        &__text {
+
+            &--bgr-pizza {
+                background: url(../img/product-fon1.png) no-repeat;
+                background-size: cover;
+                background-position: bottom 0 left 0;
+            }
+
+            &--bgr-salad {
+                background: url(../img/product-fon2.png) no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            &--bgr-dessert {
+                background: url(../img/product-fon3.png) no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}
+
+@media(min-width:640px) {
+    .logo-text {
+        font-size: 24px;
+        margin-left: 38px;
+    }
+
+    .burger-menu {
+
+        height: 75px;
+        width: 82px;
+
+        &__open {
+            width: 30px;
+            height: 20px;
+            padding: 0;
+            border: none;
+        }
+
+        &__inner {
+            height: 4px;
+
+            &::after {
+                content: none;
+            }
+
+            &::before {
+                content: none;
+            }
+        }
+
+        &__close {
+            width: 25px;
+            height: 25px;
+
+            &::after {
+                height: 4px;
+                width: 30px;
+            }
+
+            &::before {
+                width: 4px;
+                height: 30px;
+            }
+        }
+    }
+
+    .main-menu {
+
+        width: 243px;
+
+        li {
+            a,
+            &:first-child a,
+
+            &:nth-child(2) a,
+
+            &:nth-child(3) a,
+
+            &:nth-child(4) a,
+
+            &:nth-child(5) a {
+                font-size: 14px;
+                padding: 15px 30px;
+                border-bottom: 1px solid $menuBrd;
+            }
+
+        }
+    }
+
+    .banner {
+        padding: 28px 38px 200px 38px;
+
+        &__text {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        &__link {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    }
+
+    .categories {
+        margin-top: 6px;
+        grid-gap: 3px;
+    }
+
+    .product {
+
+        &__text {
+            font-size: 36px;
+            padding: 55px 0;
+        }
+
+
+        &__image {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .content-title {
+        margin-top: 40px;
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .menu-block {
+
+        &__title {
+            font-size: 40px;
+            margin-top: 20px;
+            padding: 18px 36px;
+        }
+
+        &:nth-child(even) .menu-block {
+            &__title {
+                margin-top: 20px;
+            }
+        }
+
+    }
+
+    .menu {
+        padding: 0 25px 20px 25px;
+
+        &__title {
+            font-size: 30px;
+            background-size: 48px;
+            padding: 16px 0;
+            margin-top: 20px;
+
+            &--wine {
+                margin-top: 12px;
+            }
+
+            &--beer {
+                margin-top: 12px;
+            }
+        }
+
+        &__card {
+            padding-top: 23px;
+        }
+
+        &__item {
+            margin-bottom: 16px;
+        }
+
+        &__name {
+            font-size: 27px;
+        }
+
+        &__price {
+            font-size: 27px;
+        }
+
+        &__description {
+            font-size: 18px;
+        }
+    }
+
+    .page-footer {
+        margin-top: 95px;
+        min-height: 95px;
+        padding: 28px 0;
+
+        &__text {
+            font-size: 18px;
+        }
+    }
+}
+
+@media(min-width:980px) {
+    .page-header {
+        padding: 9px 45px 9px 35px;
+    }
+
+
+    .logo-text,
+    .burger-menu {
+        display: none;
+    }
+
+    .logo-img {
+        display: block;
+    }
+
+    .main-menu {
+        display: flex;
+        position: static;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 0;
+        box-shadow: 0 0 0 transparent;
+        background-color: transparent;
+        align-items: center;
+
+        li {
+            a,
+            &:first-child a,
+
+            &:nth-child(2) a,
+
+            &:nth-child(3) a,
+
+            &:nth-child(4) a,
+
+            &:nth-child(5) a {
+                font-size: 15px;
+                color: $white;
+                padding: 0;
+                border-bottom: none;
+                text-transform: uppercase;
+                @include fontFamily('Montserrat');
+
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .banner {
+        padding: 60px 38px 267px 38px;
+
+        &__text {
+            font-size: 54px;
+            margin-bottom: 0;
+        }
+
+        &__link {
+            margin-top: 55px;
+            font-size: 34px;
+        }
+    }
+
+    .categories {
+        grid-gap: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product {
+        &__text {
+            width: 100%;
+            font-size: 38px;
+            padding: 145px 0;
+            background-position: center;
+        }
+
+
+        &__link {
+            display: none;
+        }
+    }
+
+    .content-title {
+        padding: 0 30px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 45px;
+
+        h2 {
+            font-size: 34px;
+        }
+
+        &-logo {
+            display: block;
+        }
+
+    }
+
+    .menu-block {
+        width: 50%;
+
+        &__title {
+            font-size: 34px;
+            margin-top: 5px;
+            padding: 26px 15px;
+        }
+
+        &:nth-child(even) .menu-block {
+            &__title {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .menu {
+        padding: 0 11px 20px 16px;
+
+        &__title {
+            font-size: 26px;
+            background-size: 44px;
+            margin-top: 15px;
+
+            &--wine {
+                margin-top: 25px;
+                margin-bottom: 0;
+            }
+
+            &--beer {
+                margin-top: 25px;
+                margin-bottom: 0;
+            }
+        }
+
+        &__name {
+            font-size: 24px;
+        }
+
+        &__price {
+            font-size: 24px;
+        }
+
+        &__description {
+            font-size: 16px;
+        }
+    }
+
+    .page-footer {
+        margin-top: 65px;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0 30px;
+
+        &__text {
+            font-size: 18px;
+            margin-left: 8px;
+        }
+
+        &__logo {
+            display: block;
+            margin-right: auto;
+        }
+    }
+}
+
+
+@media(min-width:1200px) {
+    .wrap {
+        max-width: 1200px;
+    }
+
+    .banner {
+        padding: 50px 35px 380px 35px;
+
+        &__text {
+            font-size: 62px;
+            margin-bottom: 5px;
+        }
+
+        &__link {
+            margin-top: 60px;
+            font-size: 38px;
+        }
+    }
+
+    .product {
+        &__text {
+            font-size: 43px;
+            padding: 175px 0;
+        }
+    }
+
+    .content-title {
+        margin-top: 55px;
+        padding: 0 10px 0 25px;
+
+        h2 {
+            font-size: 40px;
+        }
+
+    }
+
+    .menu-block {
+
+        &__title {
+            font-size: 40px;
+            margin-top: 0;
+            padding: 22px 15px;
+        }
+
+        &:nth-child(even) .menu-block {
+            &__title {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .menu {
+        padding: 0 20px 20px 16px;
+
+        &__card {
+            padding-top: 25px;
+        }
+
+        &__title {
+            font-size: 30px;
+            background-size: 48px;
+        }
+
+        &__name {
+            font-size: 27px;
+        }
+
+        &__price {
+            font-size: 27px;
+        }
+
+        &__description {
+            font-size: 18px;
+        }
+    }
+
+}
