@@ -453,14 +453,15 @@ body {
 }
 
 @media(min-width:640px) {
+
     .logo-text {
         font-size: 24px;
-        margin-left: 38px;
+        margin-left: 36px;
     }
 
     .burger-menu {
 
-        height: 75px;
+        height: 72px;
         width: 82px;
 
         &__open {
@@ -514,7 +515,7 @@ body {
 
             &:nth-child(5) a {
                 font-size: 14px;
-                padding: 15px 30px;
+                padding: 14px 30px;
                 border-bottom: 1px solid $menuBrd;
             }
 
@@ -522,15 +523,16 @@ body {
     }
 
     .banner {
-        padding: 28px 38px 200px 38px;
+        padding: 26px 38px 197px 38px;
 
         &__text {
             font-size: 36px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+
         }
 
         &__link {
-            margin-top: 20px;
+            margin-top: 22px;
             font-size: 24px;
         }
     }
@@ -544,7 +546,26 @@ body {
 
         &__text {
             font-size: 36px;
-            padding: 55px 0;
+            padding: 56px 0;
+
+            &--bgr-pizza {
+                background: url(../img/product-fon1.png) no-repeat;
+                background-size: cover;
+                background-position: bottom -65px left 0;
+            }
+
+            &--bgr-salad {
+                background: url(../img/product-fon2.png) no-repeat;
+                background-size: cover;
+                background-position: bottom -115px left 0;
+            }
+
+            &--bgr-dessert {
+                background: url(../img/product-fon3.png) no-repeat;
+                background-size: cover;
+                background-position: bottom -317px left 0;
+            }
+
         }
 
 
@@ -555,7 +576,7 @@ body {
     }
 
     .content-title {
-        margin-top: 40px;
+        margin-top: 42px;
 
         h2 {
             font-size: 40px;
@@ -564,6 +585,7 @@ body {
 
         p {
             font-size: 20px;
+            margin-left: 3px;
         }
     }
 
@@ -584,29 +606,34 @@ body {
     }
 
     .menu {
-        padding: 0 25px 20px 25px;
+        padding: 0 35px 20px 35px;
 
         &__title {
             font-size: 30px;
-            background-size: 48px;
+            background-size: 61px;
             padding: 16px 0;
-            margin-top: 20px;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            background-position: right -5px center;
+
 
             &--wine {
-                margin-top: 12px;
+                margin-top: 22px;
             }
 
             &--beer {
-                margin-top: 12px;
+                margin-top: 21.3px;
+                margin-bottom: 8px;
+                background-position: right 5px center;
             }
         }
 
         &__card {
-            padding-top: 23px;
+            padding-top: 17.1px;
         }
 
         &__item {
-            margin-bottom: 16px;
+            margin-bottom: 14.3px;
         }
 
         &__name {
@@ -625,17 +652,22 @@ body {
     .page-footer {
         margin-top: 95px;
         min-height: 95px;
-        padding: 28px 0;
+        padding: 26px 0;
 
         &__text {
             font-size: 18px;
+
+            &:first-of-type {
+                margin-bottom: 10px;
+            }
         }
     }
 }
 
 @media(min-width:980px) {
+
     .page-header {
-        padding: 9px 45px 9px 35px;
+        padding: 7px 30px;
     }
 
 
@@ -683,17 +715,17 @@ body {
             }
 
             &:not(:last-child) {
-                margin-right: 30px;
+                margin-right: 31px;
             }
         }
     }
 
     .banner {
-        padding: 60px 38px 267px 38px;
+        padding: 55px 31px 263px 31px;
 
         &__text {
             font-size: 54px;
-            margin-bottom: 0;
+            margin-bottom: 13px;
         }
 
         &__link {
@@ -711,7 +743,7 @@ body {
         &__text {
             width: 100%;
             font-size: 38px;
-            padding: 145px 0;
+            padding: 138px 0 150px 0;
             background-position: center;
         }
 
@@ -722,10 +754,10 @@ body {
     }
 
     .content-title {
-        padding: 0 30px;
+        padding: 0 18px 0 26px;
         justify-content: space-between;
         align-items: center;
-        margin-top: 45px;
+        margin-top: 52px;
 
         h2 {
             font-size: 34px;
@@ -733,6 +765,11 @@ body {
 
         &-logo {
             display: block;
+
+            img {
+                width: 91%;
+            }
+
         }
 
     }
@@ -742,34 +779,53 @@ body {
 
         &__title {
             font-size: 34px;
-            margin-top: 5px;
-            padding: 26px 15px;
+            margin-top: 9px;
+            padding: 20px 18.5px;
         }
 
         &:nth-child(even) .menu-block {
             &__title {
-                margin-top: 5px;
+                margin-top: 9px;
             }
         }
     }
 
     .menu {
-        padding: 0 11px 20px 16px;
+        padding: 0 9px 20px 16px;
 
         &__title {
             font-size: 26px;
-            background-size: 44px;
-            margin-top: 15px;
+            background-size: 52px;
+            margin-top: 20px;
+            margin-bottom: 10px;
 
             &--wine {
-                margin-top: 25px;
-                margin-bottom: 0;
+                margin-top: 32px;
+                margin-bottom: 10px;
+                background-size: 59px;
+                background-position: right -15px center;
+            }
+
+            &--coffe {
+                background-position: right 5px center;
+                background-size: 59.5px;
             }
 
             &--beer {
-                margin-top: 25px;
-                margin-bottom: 0;
+                margin-top: 32px;
+                margin-bottom: 10;
+                background-size: 59.5px;
+                background-position: right 2px center;
             }
+        }
+
+        &__card {
+            padding-top: 18px;
+            margin-bottom: 7px;
+        }
+
+        &__item {
+            margin-bottom: 13px;
         }
 
         &__name {
@@ -782,18 +838,24 @@ body {
 
         &__description {
             font-size: 16px;
+            padding-left: 6px;
         }
     }
 
     .page-footer {
-        margin-top: 65px;
+        margin-top: 57px;
         flex-direction: row;
         justify-content: flex-end;
-        padding: 0 30px;
+        align-items: center;
+        padding: 7px 30px;
 
         &__text {
             font-size: 18px;
-            margin-left: 8px;
+            margin-left: 5px;
+
+            &:first-of-type {
+                margin-bottom: 0;
+            }
         }
 
         &__logo {
@@ -809,8 +871,22 @@ body {
         max-width: 1200px;
     }
 
+    .page-header {
+        padding: 7px 37px;
+    }
+
+    .main-menu {
+
+        li {
+
+            &:not(:last-child) {
+                margin-right: 31.5px;
+            }
+        }
+    }
+
     .banner {
-        padding: 50px 35px 380px 35px;
+        padding: 45px 39px 380px 39px;
 
         &__text {
             font-size: 62px;
@@ -818,7 +894,7 @@ body {
         }
 
         &__link {
-            margin-top: 60px;
+            margin-top: 54px;
             font-size: 38px;
         }
     }
@@ -826,16 +902,26 @@ body {
     .product {
         &__text {
             font-size: 43px;
-            padding: 175px 0;
+            padding: 178px 0;
         }
     }
 
     .content-title {
-        margin-top: 55px;
-        padding: 0 10px 0 25px;
+        margin-top: 41px;
+        margin-bottom: 15px;
+        padding: 0 10px 0 20px;
 
         h2 {
+            margin-top: 29px;
             font-size: 40px;
+        }
+
+        &-logo {
+
+            img {
+                width: 100%;
+
+            }
         }
 
     }
@@ -845,7 +931,7 @@ body {
         &__title {
             font-size: 40px;
             margin-top: 0;
-            padding: 22px 15px;
+            padding: 17px 18px;
         }
 
         &:nth-child(even) .menu-block {
@@ -856,15 +942,36 @@ body {
     }
 
     .menu {
-        padding: 0 20px 20px 16px;
+        padding: 0 9px 20px 22px;
 
         &__card {
-            padding-top: 25px;
+            padding-top: 15px;
         }
 
         &__title {
             font-size: 30px;
-            background-size: 48px;
+            background-size: 60px;
+            margin-top: 16px;
+
+            &--wine {
+                margin-top: 24px;
+                margin-bottom: 9px;
+                background-position: right -7px center;
+            }
+
+
+
+            &--beer {
+                margin-top: 24px;
+                margin-bottom: 9px;
+                background-size: 64px;
+                background-position: right 12px center;
+            }
+        }
+
+        &__card {
+            padding-top: 16px;
+            margin-bottom: 2px;
         }
 
         &__name {
@@ -877,7 +984,15 @@ body {
 
         &__description {
             font-size: 18px;
+            padding-left: 1px;
+
         }
+    }
+
+    .page-footer {
+        margin-top: 105px;
+        padding: 6px 37px;
+
     }
 
 }
