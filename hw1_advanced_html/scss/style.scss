@@ -456,6 +456,7 @@ body {
 
 @media(min-width:640px) {
 
+
     .logo-text {
         font-size: 24px;
         margin-left: 36px;
@@ -861,8 +862,7 @@ body {
             }
         }
 
-        &__logo {
-            display: block;
+        .logo-img {
             margin-right: auto;
         }
     }

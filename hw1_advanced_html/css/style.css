@@ -744,8 +744,7 @@ body {
       margin-left: 5px; }
       .page-footer__text:first-of-type {
         margin-bottom: 0; }
-    .page-footer__logo {
-      display: block;
+    .page-footer .logo-img {
       margin-right: auto; } }
 
 @media (min-width: 1200px) {
