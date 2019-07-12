@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrap {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  display: flex;
+  padding: 10px 15px 10px 30px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(61, 38, 38);
+}
+
+.page-header__img {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.btn {
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  background-color: inherit;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: rgb(61, 38, 38);
+
+}
+
+.page-header__title {
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  background-color: rgb(61, 38, 38);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 20px 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  color: #fff;
+}
+
+.form__select {
+  margin-bottom: 20px;
+}
+
+.form__input-wrapper {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.form__label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  outline: none;
+  background-image: url(../img/close2.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.btn--padding {
+  min-width: 120px;
+  padding: 5px 0;
+}
+
+.main-content {
+  position: relative;
+  margin-top: 10px;
+  min-height: 100vh;
+  background-color: rgba(61, 38, 38, 0.4);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: min-content;
+  grid-gap: 10px;
+  align-content: flex-start;
+  grid-auto-flow: row;
+}
+
+.visit-card {
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 228px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.visit-card--border{
+  border: 1px solid #fff;
+}
+
+.article__field-main,
+.article__field {
+  margin-bottom: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.main-content__title {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
