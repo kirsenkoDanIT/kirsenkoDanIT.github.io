@@ -140,7 +140,7 @@ class CardiologistVisit extends Visit {
         this._age = age
         this._pressure = pressure
         this._diseases = diseases
-        this._args = [`Цель визита: ${this._reason}`, `Возраст: ${this._age}`, `Давление: ${this._pressure}`, `Перенесенные заболевания: ${this._diseases}`]
+        this._args = [`Цель визита: ${this._reason}`, `Возраст: ${this._age}`, `Давление: ${this._pressure}`, `Заболевания: ${this._diseases}`]
 
         this.createCard()
 
