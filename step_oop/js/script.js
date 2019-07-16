@@ -35,11 +35,7 @@ if (localStorage.item) {
     hideTitle()
 } else localStorageArr = []
 
-document.addEventListener('click', (e) => {
-    if (!form.contains(e.target)) {
-        form.classList.add('hide')
-    }
-})
+
 
 // классы
 
@@ -235,6 +231,12 @@ openFormBtn.addEventListener('click', (e) => {
 
 closeFormBtn.addEventListener('click', () => {
     form.classList.toggle('hide')
+})
+
+document.addEventListener('click', (e) => {
+    if (!form.contains(e.target)) {
+        form.classList.add('hide')
+    }
 })
 
 select.addEventListener('change', () => {
