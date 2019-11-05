@@ -1,7 +1,7 @@
 # kirsenkoDanIT.github.io
 
 ## Appointment with a doctor(step_oop)
-### Application for appointment with a doctor
+#### Application for appointment with a doctor
 [Link](https://kirsenkodanit.github.io/step_oop/)
 
 
@@ -11,7 +11,7 @@
 * CSS
 
 ## theHam(step_1_project)
-### Landing page
+#### Landing page
 [Link](https://kirsenkodanit.github.io/step_1_project/)
 
 * JavaScript
@@ -20,7 +20,7 @@
 * CSS
 
 ## Pizza(hw1_advanced_html)
-### Landing page
+#### Landing page
 [Link](https://kirsenkodanit.github.io/hw1_advanced_html/)
 
 * Adaptive
@@ -29,7 +29,7 @@
 * CSS
 
 ## Agency(itstep)
-### Landing page
+#### Landing page
 [Link](https://kirsenkodanit.github.io/itstep/)
 
 * HTML
